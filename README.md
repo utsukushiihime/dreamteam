@@ -67,7 +67,7 @@ App for finding team members for a specific project. The app will allow develope
 - [ApolloClient](https://www.apollographql.com/docs/react/)
 - [MySQL](https://vercel.com/guides/deploying-next-and-mysql-with-vercel)
 
-## Daily Milestones
+## Milestones
 
 - One: Authorization
 - Two: User Profile
