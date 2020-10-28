@@ -1,17 +1,9 @@
-import Link from "next/link";
+import Layout from "../components/layout";
 
 export default function Resources() {
   return (
-    <div>
-      Welcome to the about page. Go to the{" "}
-      <Link href="/">
-        <a>Home</a>
-      </Link>{" "}
-      or{" "}
-      <Link href="/contact">
-        <a>contact</a>
-      </Link>
-      page.
-    </div>
+    <Layout>
+      <h1>Resources Page</h1>
+    </Layout>
   );
 }

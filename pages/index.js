@@ -1,7 +1,5 @@
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
 import { gql, useQuery } from "@apollo/client";
+import Layout from "../components/layout";
 
 const ViewerQuery = gql`
   query ViewerQuery {
@@ -13,54 +11,18 @@ const ViewerQuery = gql`
 `;
 
 const Index = () => {
-  const router = useRouter();
-  const { data, loading, error } = useQuery(ViewerQuery);
+  const { data } = useQuery(ViewerQuery);
   const viewer = data?.viewer;
-  const shouldRedirect = !(loading || error || viewer);
-
-  useEffect(() => {
-    if (shouldRedirect) {
-      router.push("/signin");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shouldRedirect]);
-
-  if (error) {
-    return <p>{error.message}</p>;
-  }
 
   if (viewer) {
     return (
-      <div>
-        You're signed in as {viewer.email}
-        <ul>
-          <li>
-            <Link href="/about">
-              <a>about</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/resources">
-              <a>resources</a>
-            </Link>
-          </li>
-          <li></li>
-          <li>
-            <Link href="/profile">
-              <a>profile</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/signout">
-              <a>signout</a>
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <Layout>
+        <h1>Home</h1>
+      </Layout>
     );
   }
 
-  return <p>Loading...</p>;
+  return <Layout>Welcome.</Layout>;
 };
 
 export default Index;

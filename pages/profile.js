@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import { gql, useQuery } from "@apollo/client";
+import Layout from "../components/layout";
 
 const ViewerQuery = gql`
   query ViewerQuery {
@@ -31,20 +31,9 @@ const Profile = () => {
 
   if (viewer) {
     return (
-      <>
+      <Layout>
         <h1>Profile</h1>
-        You're signed in as {viewer.email} goto{" "}
-        <Link href="/about">
-          <a>about</a>
-        </Link>{" "}
-        page. or{" "}
-        <Link href="/project">
-          <a>project</a>
-        </Link>
-        <Link href="/signout">
-          <a>signout</a>
-        </Link>
-      </>
+      </Layout>
     );
   }
 
