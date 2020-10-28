@@ -5,7 +5,9 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <main role="main">{children}</main>
+      <main className="text-center my-5" role="main">
+        {children}
+      </main>
       <Footer />
     </>
   );

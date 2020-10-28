@@ -18,41 +18,41 @@ export default function Header() {
     return (
       <header>
         <nav className="navbar fixed-top">
-          <ul className={styles.navItems}>
-            <li className={styles.navItem}>
+          <ul className="nav justify-content-center">
+            <li className="nav-item">
               <Link href="/">
-                <a>Home</a>
+                <a className="nav-link">Home</a>
               </Link>
             </li>
-            <li className={styles.navItem}>
+            <li className="nav-item">
               <Link href="/about">
-                <a>About</a>
+                <a className="nav-link">About</a>
               </Link>
             </li>
-            <li className={styles.navItem}>
+            <li className="nav-item">
               <Link href="/resources">
-                <a>Resources</a>
+                <a className="nav-link">Resources</a>
               </Link>
             </li>
-            <li className={styles.navItem}>
+            <li className="nav-item">
               <Link href="/assessment">
-                <a>Assessment</a>
+                <a className="nav-link">Assessment</a>
               </Link>
             </li>
-            <li className={styles.navItem}>
+            <li className="nav-item">
               <Link href="/contact">
-                <a>Contact</a>
+                <a className="nav-link">Contact</a>
               </Link>
             </li>
 
-            <li className={styles.navItem}>
+            <li className="nav-item">
               <Link href="/profile">
-                <a>Profile</a>
+                <a className="nav-link">Profile</a>
               </Link>
             </li>
-            <li className={styles.navItem}>
+            <li className="nav-item">
               <Link href="/signout">
-                <a>Sign Out</a>
+                <a className="nav-link">Sign Out</a>
               </Link>
             </li>
           </ul>
@@ -62,37 +62,37 @@ export default function Header() {
   }
   return (
     <header>
-      <nav className="navbar nav">
-        <ul className={styles.navItems}>
-          <li className={styles.navItem}>
+      <nav className="navbar fixed-top">
+        <ul className="nav justify-content-center">
+          <li className="nav-item">
             <Link href="/">
-              <a>Home</a>
+              <a className="nav-link">Home</a>
             </Link>
           </li>
-          <li className={styles.navItem}>
+          <li className="nav-item">
             <Link href="/about">
-              <a>About</a>
+              <a className="nav-link">About</a>
             </Link>
           </li>
-          <li className={styles.navItem}>
+          <li className="nav-item">
             <Link href="/resources">
-              <a>Resources</a>
+              <a className="nav-link">Resources</a>
             </Link>
           </li>
-          <li className={styles.navItem}>
+          <li className="nav-item">
             <Link href="/contact">
-              <a>Contact</a>
+              <a className="nav-link">Contact</a>
             </Link>
           </li>
 
-          <li className={styles.navItem}>
+          <li className="nav-item">
             <Link href="/signin">
-              <a>Sign In</a>
+              <a className="nav-link">Sign In</a>
             </Link>
           </li>
-          <li className={styles.navItem}>
+          <li className="nav-item">
             <Link href="/signup">
-              <a>Sign Up</a>
+              <a className="nav-link">Sign Up</a>
             </Link>
           </li>
         </ul>

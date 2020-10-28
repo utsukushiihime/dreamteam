@@ -3,35 +3,29 @@ import styles from "./footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className="footer footer-nav">
-      <hr />
-      <ul className={styles.navItems}>
-        <li className={styles.navItem}>
+    <nav className="navbar fixed-bottom navbar-expand-sm">
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item">
           <Link href="/">
-            <a>Home</a>
+            <a className="nav-link">Home</a>
           </Link>
         </li>
-        <li className={styles.navItem}>
+        <li className="nav-item">
           <Link href="/about">
-            <a>About</a>
+            <a className="nav-link">About</a>
           </Link>
         </li>
-        <li className={styles.navItem}>
+        <li className="nav-item">
           <Link href="/resources">
-            <a>Resources</a>
+            <a className="nav-link">Resources</a>
           </Link>
         </li>
-        <li className={styles.navItem}>
-          <Link href="/assessment">
-            <a>Assessment</a>
-          </Link>
-        </li>
-        <li className={styles.navItem}>
+        <li className="nav-item">
           <Link href="/contact">
-            <a>Contact</a>
+            <a className="nav-link">Contact</a>
           </Link>
         </li>
       </ul>
-    </footer>
+    </nav>
   );
 }

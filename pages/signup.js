@@ -41,7 +41,7 @@ function SignUp() {
   }
 
   return (
-    <>
+    <div className="form-signin">
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         {errorMsg && <p>{errorMsg}</p>}
@@ -64,7 +64,7 @@ function SignUp() {
           <a>Sign in</a>
         </Link>
       </form>
-    </>
+    </div>
   );
 }
 

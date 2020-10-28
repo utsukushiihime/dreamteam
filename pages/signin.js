@@ -46,7 +46,7 @@ function SignIn() {
   }
 
   return (
-    <>
+    <div className="form-signin">
       <h1>Sign In</h1>
       <form onSubmit={handleSubmit}>
         {errorMsg && <p>{errorMsg}</p>}
@@ -72,7 +72,7 @@ function SignIn() {
           <button className="btn btn-purple">Sign up</button>
         </Link>
       </form>
-    </>
+    </div>
   );
 }
 
