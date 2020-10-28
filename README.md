@@ -63,7 +63,8 @@ App for finding team members for a specific project. The app will allow develope
 - [Next.js](https://nextjs.org/)
 - [Vercel](https://vercel.com/)
 - [Node.js](https://nodejs.org/en/)
-- JWT
+- [GraphQL](https://graphql.org/)
+- [ApolloClient](https://www.apollographql.com/blog/whats-next-js-for-apollo-e4dfe835d070/)
 - [MySQL](https://vercel.com/guides/deploying-next-and-mysql-with-vercel)
 
 ## Daily Milestones
@@ -75,4 +76,5 @@ App for finding team members for a specific project. The app will allow develope
 - Five: Contact, Resources, Styling
 - Six: Testing & Styling
 - Seven: Deployment
+
 # dreamteam
