@@ -25,3 +25,12 @@ a:hover {
 h1 {
   color: #eee;
 }
+
+.btn-purple {
+  background: #5c31ca;
+  color: #fff;
+}
+.btn-purple:hover {
+  background: #381d7e;
+  color: #fff;
+}
