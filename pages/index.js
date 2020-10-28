@@ -17,12 +17,20 @@ const Index = () => {
   if (viewer) {
     return (
       <Layout>
-        <h1>Home</h1>
+        <div className="container">
+          <h1>Home</h1>
+        </div>
       </Layout>
     );
   }
 
-  return <Layout>Welcome.</Layout>;
+  return (
+    <Layout>
+      <div className="container">
+        <h1>Welcome.</h1>
+      </div>
+    </Layout>
+  );
 };
 
 export default Index;

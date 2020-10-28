@@ -10,6 +10,7 @@
     "@apollo/client": "^3.0.2",
     "@hapi/iron": "6.0.0",
     "apollo-server-micro": "^2.14.2",
+    "bootstrap": "^4.5.3",
     "cookie": "^0.4.1",
     "graphql": "^14.0.2",
     "moment": "^2.29.1",

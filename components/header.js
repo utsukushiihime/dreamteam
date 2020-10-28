@@ -17,7 +17,7 @@ export default function Header() {
   if (viewer) {
     return (
       <header>
-        <nav>
+        <nav className="navbar nav">
           <ul className={styles.navItems}>
             <li className={styles.navItem}>
               <Link href="/">
@@ -62,7 +62,7 @@ export default function Header() {
   }
   return (
     <header>
-      <nav>
+      <nav className="navbar nav">
         <ul className={styles.navItems}>
           <li className={styles.navItem}>
             <Link href="/">
