@@ -32,7 +32,14 @@ const Profile = () => {
   if (viewer) {
     return (
       <Layout>
-        <h1>Profile</h1>
+        <div className="container">
+          <h1 className="text-center mb-5">Profile</h1>
+          <div className="row">
+            <div className="col">Profile Info</div>
+            <div className="col">Project/Skills</div>
+            <div className="col">My Teams/Recommendations</div>
+          </div>
+        </div>
       </Layout>
     );
   }
