@@ -8,6 +8,7 @@ a {
   display: inline-block;
   font-size: 1em;
   font-weight: 800;
+  cursor: pointer;
   color: #fff;
   overflow: hidden;
   background: linear-gradient(to right, #9c169c, #fb03c5 50%, #5c31ca 50%);

@@ -65,11 +65,6 @@ export const typeDefs = gql`
     email: String!
     password: String!
   }
-  # NOTE Test Profile Input
-  input ProfileName {
-    first_name: String!
-    last_name: String!
-  }
 
   type SignUpPayload {
     user: User!
@@ -77,10 +72,6 @@ export const typeDefs = gql`
 
   type SignInPayload {
     user: User!
-  }
-  # NOTE Test Profile Payload
-  type ProfileNamePayload {
-    profile: Profile!
   }
 
   type Query {
@@ -90,6 +81,12 @@ export const typeDefs = gql`
     profile(id: ID!): Profile!
     profiles: [Profile]!
     member: Profile
+    skill(id: ID!): Skill!
+    skills: Skill
+    project(id: ID!): Project!
+    projects: Project
+    assessment(id: ID!): Assessment!
+    assessments: Assessment
   }
   # TODO Need to do profile mutation
   type Mutation {

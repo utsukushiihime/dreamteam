@@ -17,7 +17,7 @@ export default function Header() {
   if (viewer) {
     return (
       <header>
-        <nav className="navbar nav">
+        <nav className="navbar fixed-top">
           <ul className={styles.navItems}>
             <li className={styles.navItem}>
               <Link href="/">
