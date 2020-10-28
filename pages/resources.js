@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function About() {
+export default function Resources() {
   return (
     <div>
       Welcome to the about page. Go to the{" "}
@@ -9,7 +9,7 @@ export default function About() {
       </Link>{" "}
       or{" "}
       <Link href="/contact">
-        <a>Contact</a>
+        <a>contact</a>
       </Link>
       page.
     </div>

@@ -64,7 +64,7 @@ App for finding team members for a specific project. The app will allow develope
 - [Vercel](https://vercel.com/)
 - [Node.js](https://nodejs.org/en/)
 - [GraphQL](https://graphql.org/)
-- [ApolloClient](https://www.apollographql.com/blog/whats-next-js-for-apollo-e4dfe835d070/)
+- [ApolloClient](https://www.apollographql.com/docs/react/)
 - [MySQL](https://vercel.com/guides/deploying-next-and-mysql-with-vercel)
 
 ## Daily Milestones

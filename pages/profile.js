@@ -12,7 +12,7 @@ const ViewerQuery = gql`
   }
 `;
 
-const Index = () => {
+const Profile = () => {
   const router = useRouter();
   const { data, loading, error } = useQuery(ViewerQuery);
   const viewer = data?.viewer;
@@ -31,36 +31,24 @@ const Index = () => {
 
   if (viewer) {
     return (
-      <div>
-        You're signed in as {viewer.email}
-        <ul>
-          <li>
-            <Link href="/about">
-              <a>about</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/resources">
-              <a>resources</a>
-            </Link>
-          </li>
-          <li></li>
-          <li>
-            <Link href="/profile">
-              <a>profile</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/signout">
-              <a>signout</a>
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <>
+        <h1>Profile</h1>
+        You're signed in as {viewer.email} goto{" "}
+        <Link href="/about">
+          <a>about</a>
+        </Link>{" "}
+        page. or{" "}
+        <Link href="/project">
+          <a>project</a>
+        </Link>
+        <Link href="/signout">
+          <a>signout</a>
+        </Link>
+      </>
     );
   }
 
   return <p>Loading...</p>;
 };
 
-export default Index;
+export default Profile;
