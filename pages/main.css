@@ -27,13 +27,31 @@ h1 {
   color: #eee;
 }
 
+main.text-center.my-5 {
+  margin-top: 100px !important;
+}
+
+nav.navbar.fixed-top {
+  background-color: #0f0f10;
+  margin-bottom: 40px;
+}
+nav.navbar.fixed-bottom.navbar-expand-sm {
+  background-color: #0f0f10;
+  margin: 40px 0 0;
+}
+
 .btn-purple {
   background: #5c31ca;
   color: #fff;
 }
+.btn-purple-outline {
+  border: 1px solid #5c31ca;
+  color: #5c31ca !important;
+}
+
 .btn-purple:hover {
   background: #381d7e;
-  color: #fff;
+  color: #fff !important;
 }
 
 .form-signin {
@@ -45,4 +63,11 @@ h1 {
 
 .card {
   background: none;
+}
+
+.card-img-top {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  max-height: 150px;
+  max-width: 150px;
 }

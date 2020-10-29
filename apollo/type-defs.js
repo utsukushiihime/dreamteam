@@ -10,6 +10,7 @@ export const typeDefs = gql`
   type Profile {
     id: ID!
     email: String!
+    image: String!
     first_name: String!
     last_name: String!
     title: String!
