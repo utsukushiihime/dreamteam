@@ -57,10 +57,10 @@ const Profile = () => {
           <h1 className="text-center mb-5">Profile</h1>
           <div className="row">
             <div className="col">
-              <h2>Profile</h2>
               <div className="card mb-4">
                 <div className="card-body">
-                  <h5 className="card-title">Special title treatment</h5>
+                  <h5 className="card-title">Profile</h5>
+                  <img src="..." class="card-img-top" alt="..."></img>
                   <p className="card-text">
                     With supporting text below as a natural lead-in to
                     additional content.
@@ -72,35 +72,7 @@ const Profile = () => {
               </div>
               <div className="card mb-4">
                 <div className="card-body">
-                  <h5 className="card-title">Special title treatment</h5>
-                  <p className="card-text">
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </p>
-                  <a href="#" className="btn btn-primary">
-                    Go somewhere
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <h2>Project/Skills</h2>
-
-              <div className="card mb-4">
-                <div className="card-body">
-                  <h5 className="card-title">Special title treatment</h5>
-                  <p className="card-text">
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </p>
-                  <a href="#" className="btn btn-primary">
-                    Go somewhere
-                  </a>
-                </div>
-              </div>
-              <div className="card mb-4">
-                <div className="card-body">
-                  <h5 className="card-title">Special title treatment</h5>
+                  <h5 className="card-title">Location</h5>
                   <p className="card-text">
                     With supporting text below as a natural lead-in to
                     additional content.
@@ -112,11 +84,9 @@ const Profile = () => {
               </div>
             </div>
             <div className="col">
-              <h2>My Teams/Recommendations</h2>
-
               <div className="card mb-4">
                 <div className="card-body">
-                  <h5 className="card-title">Special title treatment</h5>
+                  <h5 className="card-title">Project</h5>
                   <p className="card-text">
                     With supporting text below as a natural lead-in to
                     additional content.
@@ -128,7 +98,33 @@ const Profile = () => {
               </div>
               <div className="card mb-4">
                 <div className="card-body">
-                  <h5 className="card-title">Special title treatment</h5>
+                  <h5 className="card-title">Skills</h5>
+                  <p className="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                  <a href="#" className="btn btn-primary">
+                    Go somewhere
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card mb-4">
+                <div className="card-body">
+                  <h5 className="card-title">My Teams</h5>
+                  <p className="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                  <a href="#" className="btn btn-primary">
+                    Go somewhere
+                  </a>
+                </div>
+              </div>
+              <div className="card mb-4">
+                <div className="card-body">
+                  <h5 className="card-title">Recommendations</h5>
                   <p className="card-text">
                     With supporting text below as a natural lead-in to
                     additional content.

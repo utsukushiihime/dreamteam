@@ -42,3 +42,7 @@ h1 {
   padding: 15px;
   margin: auto;
 }
+
+.card {
+  background: none;
+}
