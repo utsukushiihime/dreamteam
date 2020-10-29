@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { gql, useQuery } from "@apollo/client";
-import styles from "./header.module.css";
 
 const ViewerQuery = gql`
   query ViewerQuery {

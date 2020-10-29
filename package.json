@@ -13,6 +13,7 @@
     "bootstrap": "^4.5.3",
     "cookie": "^0.4.1",
     "graphql": "^14.0.2",
+    "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "next": "latest",
     "prop-types": "^15.6.2",
