@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { gql, useQuery } from "@apollo/client";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ViewerQuery = gql`
   query ViewerQuery {
@@ -21,12 +22,7 @@ export default function Header() {
             <li className="navbar-brand">
               <img src="/logo.png" alt="DreamTeam" />
             </li>
-            <li className="nav-item">
-              <Link href="/">
-                <a className="nav-link">Home</a>
-              </Link>
-            </li>
-            <li className="nav-item">
+            <li className="nav-item ml-2">
               <Link href="/about">
                 <a className="nav-link">About</a>
               </Link>
@@ -46,15 +42,24 @@ export default function Header() {
                 <a className="nav-link">Contact</a>
               </Link>
             </li>
-
+          </ul>
+          <ul className="nav">
             <li className="nav-item">
               <Link href="/profile">
-                <a className="nav-link">Profile</a>
+                <a className="nav-link">
+                  <span className="float-right px-0">
+                    <FontAwesomeIcon icon="user-circle" />
+                  </span>
+                </a>
               </Link>
             </li>
             <li className="nav-item">
               <Link href="/signout">
-                <a className="nav-link">Sign Out</a>
+                <a className="nav-link">
+                  <span className="float-right px-0">
+                    <FontAwesomeIcon icon="sign-out-alt" />
+                  </span>
+                </a>
               </Link>
             </li>
           </ul>
@@ -66,6 +71,9 @@ export default function Header() {
     <header>
       <nav className="navbar fixed-top">
         <ul className="nav justify-content-center">
+          <li className="navbar-brand">
+            <img src="/logo.png" alt="DreamTeam" />
+          </li>
           <li className="nav-item">
             <Link href="/">
               <a className="nav-link">Home</a>
@@ -86,15 +94,26 @@ export default function Header() {
               <a className="nav-link">Contact</a>
             </Link>
           </li>
-
+        </ul>
+        <ul className="nav">
           <li className="nav-item">
             <Link href="/signin">
-              <a className="nav-link">Sign In</a>
+              <a className="nav-link">
+                <span className="mr-2">
+                  <FontAwesomeIcon icon="sign-in-alt" />
+                </span>
+                Sign In
+              </a>
             </Link>
           </li>
           <li className="nav-item">
             <Link href="/signup">
-              <a className="nav-link">Sign Up</a>
+              <a className="nav-link">
+                <span className="mr-2">
+                  <FontAwesomeIcon icon="user-plus" />
+                </span>
+                Sign Up
+              </a>
             </Link>
           </li>
         </ul>
