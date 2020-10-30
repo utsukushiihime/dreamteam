@@ -68,7 +68,7 @@ const Profile = () => {
                     </span>
                   </h5>
                   <img
-                    src="/avatars/avatar_1.png"
+                    src="/avatars/avatar_7.png"
                     className="card-img-top mx-auto d-block"
                     alt="First Name"
                   ></img>

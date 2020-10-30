@@ -9,6 +9,8 @@ export const typeDefs = gql`
 
   type Profile {
     id: ID!
+    createdAt: Int!
+    updatedAt: Int!
     email: String!
     image: String!
     first_name: String!
@@ -67,12 +69,41 @@ export const typeDefs = gql`
     password: String!
   }
 
+  input CreateProfileInput {
+    id: ID!
+    createdAt: Int!
+    updatedAt: Int!
+    email: String!
+    image: String!
+    first_name: String!
+    last_name: String!
+    title: String!
+    address1: String!
+    address2: String
+    city: String!
+    state: String!
+    zip: Int!
+    country: String!
+    bio: String!
+    skills: String
+    isAvailable: String!
+    twitter: String
+    facebook: String
+    linkedin: String
+    github: String
+    youtube: String
+  }
+
   type SignUpPayload {
     user: User!
   }
 
   type SignInPayload {
     user: User!
+  }
+
+  type CreateProfilePayload {
+    profile: Profile!
   }
 
   type Query {
@@ -89,9 +120,10 @@ export const typeDefs = gql`
     assessment(id: ID!): Assessment!
     assessments: Assessment
   }
-  # TODO Need to do profile mutation
+
   type Mutation {
     signUp(input: SignUpInput!): SignUpPayload!
+    createProfile(input: CreateProfileInput!): CreateProfilePayload!
     signIn(input: SignInInput!): SignInPayload!
     signOut: Boolean!
   }
