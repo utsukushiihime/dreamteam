@@ -13,8 +13,8 @@ export const typeDefs = gql`
     updatedAt: Int!
     email: String!
     image: String!
-    first_name: String!
-    last_name: String!
+    firstName: String!
+    lastName: String!
     title: String!
     address1: String!
     address2: String
@@ -75,8 +75,8 @@ export const typeDefs = gql`
     updatedAt: Int!
     email: String!
     image: String!
-    first_name: String!
-    last_name: String!
+    firstName: String!
+    lastName: String!
     title: String!
     address1: String!
     address2: String
@@ -97,8 +97,8 @@ export const typeDefs = gql`
     id: ID!
     email: String!
     image: String!
-    first_name: String!
-    last_name: String!
+    firstName: String!
+    lastName: String!
     title: String!
     address1: String!
     address2: String

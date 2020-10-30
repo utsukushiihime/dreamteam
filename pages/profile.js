@@ -17,8 +17,8 @@ const ProfileQuery = gql`
     profile {
       id
       image
-      first_name
-      last_name
+      firstName
+      lastName
       title
       email
       address1
