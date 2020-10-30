@@ -1,6 +1,6 @@
 import { AuthenticationError, UserInputError } from "apollo-server-micro";
 import { createUser, findUser, validatePassword } from "../lib/user";
-// Add createProfile, findProfile, editProfile, deleteProfile
+import { createProfile, findProfile } from "../lib/profile";
 import { setLoginSession, getLoginSession } from "../lib/auth";
 import { removeTokenCookie } from "../lib/auth-cookies";
 
@@ -19,11 +19,26 @@ export const resolvers = {
         );
       }
     },
+    async member(_parent, _args, context, _info) {
+      try {
+        const session = await getProfile(context.req);
+
+        if (session) {
+          return findProfile({ id: session.id });
+        }
+      } catch (error) {
+        throw new ProfileError("Could not create your profile");
+      }
+    },
   },
   Mutation: {
     async signUp(_parent, args, _context, _info) {
       const user = await createUser(args.input);
       return { user };
+    },
+    async createProfile(_parent, args, _context, _info) {
+      const profile = await createProfile(args.input);
+      return { profile };
     },
     async signIn(_parent, args, context, _info) {
       const user = await findUser({ email: args.input.email });
