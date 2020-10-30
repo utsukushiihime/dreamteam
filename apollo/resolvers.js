@@ -27,7 +27,7 @@ export const resolvers = {
           return findProfile({ id: session.id });
         }
       } catch (error) {
-        throw new ProfileError("Could not create your profile");
+        throw new UserInputError("Could not create your profile");
       }
     },
   },

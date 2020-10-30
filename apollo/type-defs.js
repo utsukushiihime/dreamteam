@@ -58,7 +58,7 @@ export const typeDefs = gql`
     answer: String!
     skills: [Skill]
   }
-  # TODO Need to do profile inputs
+
   input SignUpInput {
     email: String!
     password: String!
@@ -93,6 +93,28 @@ export const typeDefs = gql`
     github: String
     youtube: String
   }
+  input UpdateProfileInput {
+    id: ID!
+    email: String!
+    image: String!
+    first_name: String!
+    last_name: String!
+    title: String!
+    address1: String!
+    address2: String
+    city: String!
+    state: String!
+    zip: Int!
+    country: String!
+    bio: String!
+    skills: String
+    isAvailable: String!
+    twitter: String
+    facebook: String
+    linkedin: String
+    github: String
+    youtube: String
+  }
 
   type SignUpPayload {
     user: User!
@@ -103,6 +125,10 @@ export const typeDefs = gql`
   }
 
   type CreateProfilePayload {
+    profile: Profile!
+  }
+
+  type UpdateProfilePayload {
     profile: Profile!
   }
 
@@ -124,6 +150,8 @@ export const typeDefs = gql`
   type Mutation {
     signUp(input: SignUpInput!): SignUpPayload!
     createProfile(input: CreateProfileInput!): CreateProfilePayload!
+    updateProfile(input: UpdateProfileInput!): UpdateProfilePayload!
+    deleteProfile(id: ID!): Profile!
     signIn(input: SignInInput!): SignInPayload!
     signOut: Boolean!
   }
