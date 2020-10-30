@@ -1,17 +1,27 @@
 body {
   background: #141416;
-  color: #eee;
+  color: #99999a;
 }
 
 a {
+  color: #99999a;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+a:hover {
+  color: #5c31ca !important;
+}
+
+a.nav-link {
   position: relative;
   display: inline-block;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 500;
   cursor: pointer;
   color: #fff;
   overflow: hidden;
-  background: linear-gradient(to right, #9c169c, #fb03c5 50%, #5c31ca 50%);
+  background: linear-gradient(to right, #ffa500, #fb03c5 50%, #5c31ca 50%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -20,13 +30,28 @@ a {
   transition: background-position 275ms ease;
   text-decoration: none;
 }
-a:hover {
+a.nav-link:hover {
   background-position: 0 100%;
 }
-h1 {
-  color: #eee;
+h1,
+h2,
+h3,
+h6 {
+  color: #99999a;
 }
 
+h4,
+h5 {
+  color: #5c31ca;
+}
+
+.svg-inline--fa {
+  color: #5c31ca;
+}
+
+.svg-inline--fa:hover {
+  color: #b5b5b5;
+}
 main.text-center.my-5 {
   margin-top: 100px !important;
 }
@@ -38,6 +63,15 @@ nav.navbar.fixed-top {
 nav.navbar.fixed-bottom.navbar-expand-sm {
   background-color: #0f0f10;
   margin: 40px 0 0;
+}
+
+nav img {
+  width: 50px;
+  height: 50px;
+}
+
+li.nav-item {
+  padding-top: 10px;
 }
 
 .btn-purple {

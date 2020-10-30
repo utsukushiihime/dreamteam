@@ -56,7 +56,6 @@ const Profile = () => {
     return (
       <Layout>
         <div className="container">
-          <h1 className="text-center mb-5">Profile</h1>
           <div className="row">
             <div className="col">
               <div className="card mb-4 text-left">
@@ -78,9 +77,6 @@ const Profile = () => {
                     With supporting text below as a natural lead-in to
                     additional content.
                   </p>
-                  <a href="#" className="btn btn-purple-outline">
-                    Go somewhere
-                  </a>
                 </div>
               </div>
               <div className="card mb-4 text-left">
@@ -97,9 +93,6 @@ const Profile = () => {
                     With supporting text below as a natural lead-in to
                     additional content.
                   </p>
-                  <a href="#" className="btn btn-purple-outline">
-                    Go somewhere
-                  </a>
                 </div>
               </div>
             </div>
@@ -111,7 +104,7 @@ const Profile = () => {
                     With supporting text below as a natural lead-in to
                     additional content.
                   </p>
-                  <a href="#" className="btn btn-purple-outline">
+                  <a href="#" className="btn btn-purple-outline btn-block">
                     Go somewhere
                   </a>
                 </div>
@@ -123,7 +116,7 @@ const Profile = () => {
                     With supporting text below as a natural lead-in to
                     additional content.
                   </p>
-                  <a href="#" className="btn btn-purple-outline">
+                  <a href="#" className="btn btn-purple-outline btn-block">
                     Go somewhere
                   </a>
                 </div>
@@ -137,7 +130,7 @@ const Profile = () => {
                     With supporting text below as a natural lead-in to
                     additional content.
                   </p>
-                  <a href="#" className="btn btn-purple-outline">
+                  <a href="#" className="btn btn-purple btn-block">
                     Go somewhere
                   </a>
                 </div>
@@ -149,7 +142,7 @@ const Profile = () => {
                     With supporting text below as a natural lead-in to
                     additional content.
                   </p>
-                  <a href="#" className="btn btn-purple-outline">
+                  <a href="#" className="btn btn-purple btn-block">
                     Go somewhere
                   </a>
                 </div>
