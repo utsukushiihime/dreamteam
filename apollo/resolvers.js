@@ -21,25 +21,28 @@ export const resolvers = {
     },
     async member(_parent, _args, context, _info) {
       try {
-        const session = await getProfile(context.req);
+        const session = await getLoginSession(context.req);
 
         if (session) {
-          return findProfile({ id: session.id });
+          return findProfile({ id: member.id });
         }
       } catch (error) {
-        throw new UserInputError("Could not create your profile");
+        throw new UserInputError(
+          `${error}. Please try again. Contact <support@creativarian.com> to report errors.`
+        );
       }
     },
   },
   Mutation: {
+    async addProfile(_parent, args, _context, _info) {
+      const profile = await addProfile(args.input);
+      return { profile };
+    },
     async signUp(_parent, args, _context, _info) {
       const user = await createUser(args.input);
       return { user };
     },
-    async createProfile(_parent, args, _context, _info) {
-      const profile = await createProfile(args.input);
-      return { profile };
-    },
+
     async signIn(_parent, args, context, _info) {
       const user = await findUser({ email: args.input.email });
 

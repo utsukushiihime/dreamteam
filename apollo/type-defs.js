@@ -9,22 +9,22 @@ export const typeDefs = gql`
 
   type Profile {
     id: ID!
-    createdAt: Int!
-    updatedAt: Int!
+    createdAt: Int
+    updatedAt: Int
     email: String!
-    image: String!
+    image: String
     firstName: String!
     lastName: String!
-    title: String!
-    address1: String!
+    title: String
+    address1: String
     address2: String
     city: String!
-    state: String!
-    zip: Int!
+    state: String
+    zip: Int
     country: String!
-    bio: String!
+    bio: String
     skills: String
-    isAvailable: String!
+    isAvailable: String
     twitter: String
     facebook: String
     linkedin: String
@@ -69,24 +69,21 @@ export const typeDefs = gql`
     password: String!
   }
 
-  input CreateProfileInput {
-    id: ID!
-    createdAt: Int!
-    updatedAt: Int!
+  input AddProfileInput {
     email: String!
-    image: String!
+    image: String
     firstName: String!
     lastName: String!
-    title: String!
-    address1: String!
+    title: String
+    address1: String
     address2: String
     city: String!
-    state: String!
-    zip: Int!
+    state: String
+    zip: Int
     country: String!
-    bio: String!
+    bio: String
     skills: String
-    isAvailable: String!
+    isAvailable: String
     twitter: String
     facebook: String
     linkedin: String
@@ -94,21 +91,20 @@ export const typeDefs = gql`
     youtube: String
   }
   input UpdateProfileInput {
-    id: ID!
     email: String!
-    image: String!
+    image: String
     firstName: String!
     lastName: String!
-    title: String!
-    address1: String!
+    title: String
+    address1: String
     address2: String
     city: String!
-    state: String!
-    zip: Int!
+    state: String
+    zip: Int
     country: String!
-    bio: String!
+    bio: String
     skills: String
-    isAvailable: String!
+    isAvailable: String
     twitter: String
     facebook: String
     linkedin: String
@@ -124,7 +120,7 @@ export const typeDefs = gql`
     user: User!
   }
 
-  type CreateProfilePayload {
+  type AddProfilePayload {
     profile: Profile!
   }
 
@@ -149,7 +145,7 @@ export const typeDefs = gql`
 
   type Mutation {
     signUp(input: SignUpInput!): SignUpPayload!
-    createProfile(input: CreateProfileInput!): CreateProfilePayload!
+    addProfile(input: AddProfileInput!): AddProfilePayload!
     updateProfile(input: UpdateProfileInput!): UpdateProfilePayload!
     deleteProfile(id: ID!): Profile!
     signIn(input: SignInInput!): SignInPayload!
