@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Layout from "../components/layout";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { gql, useQuery } from "@apollo/client";
@@ -31,7 +32,7 @@ const Project = () => {
 
   if (viewer) {
     return (
-      <>
+      <Layout>
         You're signed in as {viewer.email} goto{" "}
         <Link href="/about">
           <a>about</a>
@@ -40,7 +41,7 @@ const Project = () => {
         <Link href="/signout">
           <a>signout</a>
         </Link>
-      </>
+      </Layout>
     );
   }
 

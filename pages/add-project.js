@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Layout from "../components/layout";
 import { gql } from "@apollo/client";
 import { useMutation } from "@apollo/client";
 import { getErrorMessage } from "../lib/form";
 import Field from "../components/field";
+import TextArea from "../components/textarea";
 
 const AddProjectMutation = gql`
   mutation AddProjectMutation($name: String!, $description: String!) {
@@ -43,42 +45,44 @@ function AddProject() {
   }
 
   return (
-    <div className="form-signin">
-      <h1>Add Project Info</h1>
-      <form onSubmit={handleSubmit}>
-        {errorMsg && (
-          <p>
-            Houston, we have a problem. <br />
-            {errorMsg}
-          </p>
-        )}
-        <div className="row">
-          <div className="col">
-            <Field
-              name="name"
-              type="text"
-              autoComplete="name"
-              required
-              label="Project Name"
-            />
-            <Field
-              name="description"
-              type="text"
-              autoComplete="description"
-              required
-              label="Project Description"
-            />
-            <button className="btn btn-purple" type="submit">
-              Add Project
-            </button>{" "}
-            or{" "}
-            <Link href="project">
-              <button className="btn btn-purple">Go to Project</button>
-            </Link>
+    <Layout>
+      <div className="form-signin">
+        <h1>Add Project Info</h1>
+        <form onSubmit={handleSubmit}>
+          {errorMsg && (
+            <p>
+              Houston, we have a problem. <br />
+              {errorMsg}
+            </p>
+          )}
+          <div className="row">
+            <div className="col">
+              <Field
+                name="name"
+                type="text"
+                autoComplete="name"
+                required
+                label="Project Name"
+              />
+              <TextArea
+                name="description"
+                type="textarea"
+                autoComplete="description"
+                required
+                label="Project Description"
+              />
+              <button className="btn btn-purple" type="submit">
+                Add Project
+              </button>{" "}
+              or{" "}
+              <Link href="project">
+                <button className="btn btn-purple">Go to Project</button>
+              </Link>
+            </div>
           </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+    </Layout>
   );
 }
 

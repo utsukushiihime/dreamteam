@@ -72,7 +72,7 @@ const Profile = () => {
                     className="card-img-top mx-auto d-block"
                     alt="First Name"
                   ></img>
-                  <small>crystal.mcneil@creativarian.com</small>
+                  <small>{viewer.email}</small>
                   <h3>Crystal McNeil</h3>
                   <p className="card-text">Software Engineer</p>
                 </div>
@@ -114,8 +114,11 @@ const Profile = () => {
                       additional content.
                     </p>
                   </div>
-                  <a href="#" className="btn btn-purple-outline btn-block">
-                    Go somewhere
+                  <a
+                    href="/project"
+                    className="btn btn-purple-outline btn-block"
+                  >
+                    View Projects
                   </a>
                 </div>
               </div>

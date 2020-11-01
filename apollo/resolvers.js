@@ -29,7 +29,7 @@ export const resolvers = {
         }
       } catch (error) {
         throw new UserInputError(
-          `${error}. Please try again. Contact <support@creativarian.com> to report errors.`
+          `${error}. Please try again. Contact <support@creativarian.com> to report user errors.`
         );
       }
     },
@@ -52,10 +52,12 @@ export const resolvers = {
       const project = await createProject(args.input);
       return { project };
     },
+
     async addProfile(_parent, args, _context, _info) {
       const profile = await createProfile(args.input);
       return { profile };
     },
+
     async signUp(_parent, args, _context, _info) {
       const user = await createUser(args.input);
       return { user };

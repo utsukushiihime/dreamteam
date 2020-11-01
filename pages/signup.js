@@ -59,9 +59,12 @@ function SignUp() {
           required
           label="Password"
         />
-        <button type="submit">Sign up</button> or{" "}
+        <button className="btn btn-purple" type="submit">
+          Sign up
+        </button>{" "}
+        or{" "}
         <Link href="signin">
-          <a>Sign in</a>
+          <a className="btn btn-purple">Sign in</a>
         </Link>
       </form>
     </div>

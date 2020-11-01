@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Layout from "../components/layout";
 import { gql } from "@apollo/client";
 import { useMutation } from "@apollo/client";
 import { getErrorMessage } from "../lib/form";
@@ -91,98 +92,123 @@ function AddProfile() {
   }
 
   return (
-    <div className="form-signin">
-      <h1>Add Profile Info</h1>
-      <form onSubmit={handleSubmit}>
-        {errorMsg && (
-          <p>
-            Houston, we have a problem. <br />
-            {errorMsg}
-          </p>
-        )}
-        <div className="row">
-          <div className="col">
-            <Field
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              label="Email"
-            />
-            <Field
-              name="firstName"
-              type="text"
-              autoComplete="firstName"
-              required
-              label="First name"
-            />
-            <Field
-              name="lastName"
-              type="text"
-              autoComplete="lastName"
-              required
-              label="Last Name"
-            />
-            <Field
-              name="title"
-              type="text"
-              autoComplete="title"
-              required
-              label="Title"
-            />
-            <Field
-              name="address1"
-              type="text"
-              autoComplete="address1"
-              required
-              label="Address 1"
-            />
-            <Field
-              name="address2"
-              type="text"
-              autoComplete="address2"
-              required
-              label="Address 2"
-            />
-            <Field
-              name="city"
-              type="text"
-              autoComplete="city"
-              required
-              label="City"
-            />
-            <Field
-              name="state"
-              type="text"
-              autoComplete="state"
-              required
-              label="State"
-            />
-            <Field
-              name="zip"
-              type="number"
-              autoComplete="zip"
-              required
-              label="Zip"
-            />
-            <Field
-              name="country"
-              type="text"
-              autoComplete="country"
-              required
-              label="Country"
-            />
-            <button className="btn btn-purple" type="submit">
-              Add to Profile
-            </button>{" "}
-            or{" "}
-            <Link href="profile">
-              <button className="btn btn-purple">Go to Profile</button>
-            </Link>
+    <Layout>
+      <div className="container text-left">
+        <h1>Add Profile Info</h1>
+        <form onSubmit={handleSubmit}>
+          {errorMsg && (
+            <p>
+              Houston, we have a problem. <br />
+              {errorMsg}
+            </p>
+          )}
+          <div className="row">
+            <div className="col">
+              <Field
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+                label="Email"
+              />
+              <div className="row">
+                <div className="col">
+                  <Field
+                    name="firstName"
+                    type="text"
+                    autoComplete="firstName"
+                    required
+                    label="First name"
+                  />
+                </div>
+                <div className="col">
+                  <Field
+                    name="lastName"
+                    type="text"
+                    autoComplete="lastName"
+                    required
+                    label="Last Name"
+                  />
+                </div>
+              </div>
+
+              <Field
+                name="title"
+                type="text"
+                autoComplete="title"
+                required
+                label="Title"
+              />
+              <Field
+                name="address1"
+                type="text"
+                autoComplete="address1"
+                required
+                label="Address 1"
+              />
+            </div>
+            <div className="col">
+              <Field
+                name="address2"
+                type="text"
+                autoComplete="address2"
+                required
+                label="Address 2"
+              />{" "}
+              <div className="row">
+                <div className="col-8">
+                  <Field
+                    name="city"
+                    type="text"
+                    autoComplete="city"
+                    required
+                    label="City"
+                  />
+                </div>
+                <div className="col">
+                  {" "}
+                  <Field
+                    name="state"
+                    type="text"
+                    autoComplete="state"
+                    required
+                    label="State"
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  {" "}
+                  <Field
+                    name="zip"
+                    type="number"
+                    autoComplete="zip"
+                    required
+                    label="Zip"
+                  />
+                </div>
+                <div className="col">
+                  <Field
+                    name="country"
+                    type="text"
+                    autoComplete="country"
+                    required
+                    label="Country"
+                  />
+                </div>
+              </div>
+              <button className="btn btn-purple" type="submit">
+                Add to Profile
+              </button>{" "}
+              or{" "}
+              <Link href="profile">
+                <button className="btn btn-purple">Go to Profile</button>
+              </Link>
+            </div>
           </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+    </Layout>
   );
 }
 

@@ -43,7 +43,7 @@ export const typeDefs = gql`
     id: ID!
     name: String!
     createdAt: Int!
-    isValidated: Boolean!
+    isValidated: Int!
     users: [User]
   }
 
@@ -51,7 +51,7 @@ export const typeDefs = gql`
     id: ID!
     name: String!
     createdAt: Int!
-    isCorrect: Boolean!
+    isCorrect: Int!
     question: String!
     answer: String!
     skills: [Skill]

@@ -1,11 +1,18 @@
-export default function Field({ name, label, type, autoComplete, required }) {
+export default function TextArea({
+  name,
+  label,
+  type,
+  autoComplete,
+  required,
+}) {
   return (
     <div className="form-group">
       <label id={[name, "label"].join("-")} htmlFor={[name, "input"].join("-")}>
         {label} {required ? <span title="Required">*</span> : undefined}
       </label>
       <br />
-      <input
+
+      <textarea
         className="form-control"
         placeholder={"Enter " + [label]}
         autoComplete={autoComplete}
@@ -13,7 +20,8 @@ export default function Field({ name, label, type, autoComplete, required }) {
         name={name}
         required={required}
         type={type}
-      />
+        rows="3"
+      ></textarea>
     </div>
   );
 }
