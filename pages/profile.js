@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { gql, useQuery } from "@apollo/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -98,7 +99,14 @@ const Profile = () => {
                 <div className="card-body">
                   <h5 className="card-title">Project</h5>
                   <h6 className="card-subtitle mb-2 text-muted">
-                    Active Projects
+                    Add Project{" "}
+                    <span className="ml-2">
+                      <Link href="/add-project">
+                        <a>
+                          <FontAwesomeIcon icon="plus" />
+                        </a>
+                      </Link>
+                    </span>
                   </h6>
                   <div className="border-top border-dark my-3">
                     <p className="card-text mt-3">

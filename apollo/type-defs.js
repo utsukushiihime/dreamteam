@@ -87,6 +87,10 @@ export const typeDefs = gql`
     github: String
     youtube: String
   }
+  input AddProjectInput {
+    name: String!
+    description: String!
+  }
   input UpdateProfileInput {
     email: String!
     image: String
@@ -120,6 +124,10 @@ export const typeDefs = gql`
     profile: Profile!
   }
 
+  type AddProjectPayload {
+    project: Project!
+  }
+
   type UpdateProfilePayload {
     profile: Profile!
   }
@@ -141,6 +149,7 @@ export const typeDefs = gql`
   type Mutation {
     signUp(input: SignUpInput!): SignUpPayload!
     addProfile(input: AddProfileInput!): AddProfilePayload!
+    addProject(input: AddProjectInput!): AddProjectPayload!
     updateProfile(input: UpdateProfileInput!): UpdateProfilePayload!
     deleteProfile(id: ID!): Profile!
     signIn(input: SignInInput!): SignInPayload!
