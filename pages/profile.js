@@ -29,7 +29,6 @@ const ProfileQuery = gql`
       country
       bio
       skills
-      isAvailable
     }
   }
 `;

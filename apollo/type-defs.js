@@ -22,7 +22,6 @@ export const typeDefs = gql`
     country: String!
     bio: String
     skills: String
-    isAvailable: String
     twitter: String
     facebook: String
     linkedin: String
@@ -82,7 +81,6 @@ export const typeDefs = gql`
     country: String!
     bio: String
     skills: String
-    isAvailable: String
     twitter: String
     facebook: String
     linkedin: String
@@ -103,7 +101,6 @@ export const typeDefs = gql`
     country: String!
     bio: String
     skills: String
-    isAvailable: String
     twitter: String
     facebook: String
     linkedin: String

@@ -11,18 +11,26 @@ const AddProfileMutation = gql`
     $email: String!
     $firstName: String!
     $lastName: String!
+    $title: String!
+    $address1: String
+    $address2: String
     $city: String!
+    $state: String
+    $zip: Int
     $country: String!
-    $isAvailable: String
   ) {
     addProfile(
       input: {
         email: $email
         firstName: $firstName
         lastName: $lastName
+        title: $title
+        address1: $address1
+        address2: $address2
         city: $city
+        state: $state
         country: $country
-        isAvailable: $isAvailable
+        zip: $zip
       }
     ) {
       profile {
@@ -30,9 +38,13 @@ const AddProfileMutation = gql`
         email
         firstName
         lastName
+        title
+        address1
+        address2
         city
+        state
+        zip
         country
-        isAvailable
       }
     }
   }
@@ -49,9 +61,13 @@ function AddProfile() {
     const emailElement = event.currentTarget.elements.email;
     const firstNameElement = event.currentTarget.elements.firstName;
     const lastNameElement = event.currentTarget.elements.lastName;
+    const titleElement = event.currentTarget.elements.title;
+    const address1Element = event.currentTarget.elements.address1;
+    const address2Element = event.currentTarget.elements.address2;
     const cityElement = event.currentTarget.elements.city;
+    const stateElement = event.currentTarget.elements.state;
+    const zipElement = event.currentTarget.elements.zip;
     const countryElement = event.currentTarget.elements.country;
-    const isAvailableElement = event.currentTarget.elements.isAvailable;
 
     try {
       await addProfile({
@@ -59,9 +75,13 @@ function AddProfile() {
           email: emailElement.value,
           firstName: firstNameElement.value,
           lastName: lastNameElement.value,
+          title: titleElement.value,
+          address1: address1Element.value,
+          address2: address2Element.value,
           city: cityElement.value,
+          state: stateElement.value,
+          zip: parseInt(zipElement.value),
           country: countryElement.value,
-          isAvailable: isAvailableElement.value,
         },
       });
       await router.push("/profile");
@@ -104,6 +124,27 @@ function AddProfile() {
               label="Last Name"
             />
             <Field
+              name="title"
+              type="text"
+              autoComplete="title"
+              required
+              label="Title"
+            />
+            <Field
+              name="address1"
+              type="text"
+              autoComplete="address1"
+              required
+              label="Address 1"
+            />
+            <Field
+              name="address2"
+              type="text"
+              autoComplete="address2"
+              required
+              label="Address 2"
+            />
+            <Field
               name="city"
               type="text"
               autoComplete="city"
@@ -111,17 +152,25 @@ function AddProfile() {
               label="City"
             />
             <Field
+              name="state"
+              type="text"
+              autoComplete="state"
+              required
+              label="State"
+            />
+            <Field
+              name="zip"
+              type="number"
+              autoComplete="zip"
+              required
+              label="Zip"
+            />
+            <Field
               name="country"
               type="text"
               autoComplete="country"
               required
               label="Country"
-            />
-            <Field
-              name="isAvailable"
-              type="text"
-              autoComplete="isAvailable"
-              label="isAvailable"
             />
             <button className="btn btn-purple" type="submit">
               Add to Profile
