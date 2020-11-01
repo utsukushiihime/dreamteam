@@ -6,7 +6,6 @@ import { gql } from "@apollo/client";
 import { useMutation } from "@apollo/client";
 import { getErrorMessage } from "../lib/form";
 import Field from "../components/field";
-import TextArea from "../components/textarea";
 
 const AddSkillMutation = gql`
   mutation AddSkillMutation($name: String!) {
