@@ -45,6 +45,7 @@ function AddSkill() {
     <Layout>
       <div className="form-signin">
         <h1>Add Skill Info</h1>
+
         <form onSubmit={handleSubmit}>
           {errorMsg && (
             <p>

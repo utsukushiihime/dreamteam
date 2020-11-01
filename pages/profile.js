@@ -63,14 +63,7 @@ const Profile = () => {
               </div>
               <div className="card mb-4 text-left">
                 <div className="card-body">
-                  <h6 className="card-title">
-                    Location{" "}
-                    <span className="float-right">
-                      <a>
-                        <FontAwesomeIcon icon="edit" />
-                      </a>
-                    </span>
-                  </h6>
+                  <h6 className="card-title">Location</h6>
                   <p className="card-text">
                     With supporting text below as a natural lead-in to
                     additional content.
@@ -128,9 +121,11 @@ const Profile = () => {
                       Next.js, Vercel, Heroku
                     </p>
                   </div>
-                  <a href="#" className="btn btn-purple-outline btn-block">
-                    Go somewhere
-                  </a>
+                  <Link href="/assessment">
+                    <a className="btn btn-purple-outline btn-block">
+                      Take Assessment
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
