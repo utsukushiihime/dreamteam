@@ -35,7 +35,7 @@ export const resolvers = {
   },
   Mutation: {
     async addProfile(_parent, args, _context, _info) {
-      const profile = await addProfile(args.input);
+      const profile = await createProfile(args.input);
       return { profile };
     },
     async signUp(_parent, args, _context, _info) {
