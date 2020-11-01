@@ -6,7 +6,7 @@ export const typeDefs = gql`
     name: String!
     email: String!
     createdAt: Int!
-    profiles: [Profile]
+    profile: Profile
     projects: [Project]
     skills: [Skill]
     assessments: [Assessment]
@@ -33,7 +33,7 @@ export const typeDefs = gql`
     github: String
     youtube: String
     createdAt: Int
-    users: [User]
+    user: User
   }
 
   type Project {
@@ -41,7 +41,7 @@ export const typeDefs = gql`
     createdAt: Int!
     description: String!
     name: String!
-    users: [User]
+    user: User
   }
 
   type Skill {
@@ -49,7 +49,7 @@ export const typeDefs = gql`
     name: String!
     createdAt: Int!
     isValidated: Int
-    users: [User]
+    user: User
   }
 
   type Assessment {
@@ -59,7 +59,7 @@ export const typeDefs = gql`
     isCorrect: Int!
     question: String!
     answer: String!
-    skills: [Skill]
+    skill: Skill
   }
 
   input SignUpInput {

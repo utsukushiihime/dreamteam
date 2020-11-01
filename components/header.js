@@ -7,6 +7,7 @@ const ViewerQuery = gql`
     viewer {
       id
       email
+      name
     }
   }
 `;
@@ -49,6 +50,7 @@ export default function Header() {
             <li className="nav-item">
               <Link href="/profile">
                 <a className="nav-link">
+                  <span className="font-weight-bold mr-2">{viewer.name}</span>
                   <span className="float-right px-0">
                     <FontAwesomeIcon icon="user-circle" />
                   </span>
@@ -60,6 +62,7 @@ export default function Header() {
                 <a className="nav-link">
                   <span className="float-right px-0">
                     <FontAwesomeIcon icon="sign-out-alt" />
+                    <span className="ml-2">Logout</span>
                   </span>
                 </a>
               </Link>

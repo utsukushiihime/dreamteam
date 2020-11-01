@@ -6,6 +6,7 @@ const ViewerQuery = gql`
     viewer {
       id
       email
+      name
     }
   }
 `;
@@ -17,8 +18,18 @@ const Index = () => {
   if (viewer) {
     return (
       <Layout>
-        <div className="container">
-          <h1>Home</h1>
+        <div className="container text-left">
+          <h6>Welcome, {viewer.name}</h6>
+
+          <div className="row mt-5">
+            <div className="col">
+              <h1 className="text-center">
+                Create your
+                <br /> Dream Team
+              </h1>
+            </div>
+            <div className="col">This is a row</div>
+          </div>
         </div>
       </Layout>
     );
@@ -27,7 +38,7 @@ const Index = () => {
   return (
     <Layout>
       <div className="container">
-        <h1>Welcome.</h1>
+        <h1>Welcome</h1>
       </div>
     </Layout>
   );
