@@ -9,25 +9,25 @@ export const typeDefs = gql`
 
   type Profile {
     id: ID!
+    image: String
     email: String!
-    image: String!
-    first_name: String!
-    last_name: String!
-    title: String!
-    address1: String!
+    firstName: String!
+    lastName: String!
+    title: String
+    address1: String
     address2: String
     city: String!
-    state: String!
-    zip: Int!
+    state: String
+    zip: Int
     country: String!
-    bio: String!
+    bio: String
     skills: String
-    isAvailable: String!
     twitter: String
     facebook: String
     linkedin: String
     github: String
     youtube: String
+    createdAt: Int
     users: [User]
   }
 
@@ -56,7 +56,7 @@ export const typeDefs = gql`
     answer: String!
     skills: [Skill]
   }
-  # TODO Need to do profile inputs
+
   input SignUpInput {
     email: String!
     password: String!
@@ -67,6 +67,51 @@ export const typeDefs = gql`
     password: String!
   }
 
+  input AddProfileInput {
+    image: String
+    email: String!
+    firstName: String!
+    lastName: String!
+    title: String
+    address1: String
+    address2: String
+    city: String!
+    state: String
+    zip: Int
+    country: String!
+    bio: String
+    skills: String
+    twitter: String
+    facebook: String
+    linkedin: String
+    github: String
+    youtube: String
+  }
+  input AddProjectInput {
+    name: String!
+    description: String!
+  }
+  input UpdateProfileInput {
+    email: String!
+    image: String
+    firstName: String!
+    lastName: String!
+    title: String
+    address1: String
+    address2: String
+    city: String!
+    state: String
+    zip: Int
+    country: String!
+    bio: String
+    skills: String
+    twitter: String
+    facebook: String
+    linkedin: String
+    github: String
+    youtube: String
+  }
+
   type SignUpPayload {
     user: User!
   }
@@ -75,13 +120,24 @@ export const typeDefs = gql`
     user: User!
   }
 
+  type AddProfilePayload {
+    profile: Profile!
+  }
+
+  type AddProjectPayload {
+    project: Project!
+  }
+
+  type UpdateProfilePayload {
+    profile: Profile!
+  }
+
   type Query {
     user(id: ID!): User!
     users: [User]!
     viewer: User
     profile(id: ID!): Profile!
     profiles: [Profile]!
-    member: Profile
     skill(id: ID!): Skill!
     skills: Skill
     project(id: ID!): Project!
@@ -89,9 +145,13 @@ export const typeDefs = gql`
     assessment(id: ID!): Assessment!
     assessments: Assessment
   }
-  # TODO Need to do profile mutation
+
   type Mutation {
     signUp(input: SignUpInput!): SignUpPayload!
+    addProfile(input: AddProfileInput!): AddProfilePayload!
+    addProject(input: AddProjectInput!): AddProjectPayload!
+    updateProfile(input: UpdateProfileInput!): UpdateProfilePayload!
+    deleteProfile(id: ID!): Profile!
     signIn(input: SignInInput!): SignInPayload!
     signOut: Boolean!
   }
