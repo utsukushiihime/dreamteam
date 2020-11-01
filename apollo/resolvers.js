@@ -19,12 +19,12 @@ export const resolvers = {
         );
       }
     },
-    async member(_parent, _args, context, _info) {
+    async profile(_parent, _args, context, _info) {
       try {
         const session = await getLoginSession(context.req);
 
         if (session) {
-          return findProfile({ id: member.id });
+          return findProfile({ id: profile.id });
         }
       } catch (error) {
         throw new UserInputError(

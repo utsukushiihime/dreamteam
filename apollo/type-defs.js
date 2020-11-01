@@ -9,10 +9,8 @@ export const typeDefs = gql`
 
   type Profile {
     id: ID!
-    createdAt: Int
-    updatedAt: Int
-    email: String!
     image: String
+    email: String!
     firstName: String!
     lastName: String!
     title: String
@@ -30,6 +28,7 @@ export const typeDefs = gql`
     linkedin: String
     github: String
     youtube: String
+    createdAt: Int
     users: [User]
   }
 
@@ -70,8 +69,8 @@ export const typeDefs = gql`
   }
 
   input AddProfileInput {
-    email: String!
     image: String
+    email: String!
     firstName: String!
     lastName: String!
     title: String
@@ -134,7 +133,6 @@ export const typeDefs = gql`
     viewer: User
     profile(id: ID!): Profile!
     profiles: [Profile]!
-    member: Profile
     skill(id: ID!): Skill!
     skills: Skill
     project(id: ID!): Project!

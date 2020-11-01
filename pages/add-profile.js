@@ -26,6 +26,7 @@ const AddProfileMutation = gql`
       }
     ) {
       profile {
+        id
         email
         firstName
         lastName

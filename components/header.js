@@ -54,6 +54,15 @@ export default function Header() {
               </Link>
             </li>
             <li className="nav-item">
+              <Link href="/add-profile">
+                <a className="nav-link">
+                  <span className="float-right px-0">
+                    <FontAwesomeIcon icon="user-edit" />
+                  </span>
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link href="/signout">
                 <a className="nav-link">
                   <span className="float-right px-0">
