@@ -2,6 +2,7 @@ import { AuthenticationError, UserInputError } from "apollo-server-micro";
 import { createUser, findUser, validatePassword } from "../lib/user";
 import { createProfile, findProfile } from "../lib/profile";
 import { createProject, findProject } from "../lib/project";
+import { createSkill, findSkill } from "../lib/skill";
 import { setLoginSession, getLoginSession } from "../lib/auth";
 import { removeTokenCookie } from "../lib/auth-cookies";
 
@@ -46,8 +47,25 @@ export const resolvers = {
         );
       }
     },
+    async skill(_parent, _args, context, _info) {
+      try {
+        const session = await getLoginSession(context.req);
+
+        if (session) {
+          return findSkill({ id: skill.id });
+        }
+      } catch (error) {
+        throw new UserInputError(
+          `${error}. Please try again. Contact <support@creativarian.com> to report project errors.`
+        );
+      }
+    },
   },
   Mutation: {
+    async addSkill(_parent, args, _context, _info) {
+      const skill = await createSkill(args.input);
+      return { skill };
+    },
     async addProject(_parent, args, _context, _info) {
       const project = await createProject(args.input);
       return { project };

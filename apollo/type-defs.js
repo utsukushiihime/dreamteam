@@ -3,8 +3,13 @@ import { gql } from "@apollo/client";
 export const typeDefs = gql`
   type User {
     id: ID!
+    name: String!
     email: String!
     createdAt: Int!
+    profiles: [Profile]
+    projects: [Project]
+    skills: [Skill]
+    assessments: [Assessment]
   }
 
   type Profile {
@@ -43,7 +48,7 @@ export const typeDefs = gql`
     id: ID!
     name: String!
     createdAt: Int!
-    isValidated: Int!
+    isValidated: Int
     users: [User]
   }
 
@@ -58,6 +63,7 @@ export const typeDefs = gql`
   }
 
   input SignUpInput {
+    name: String!
     email: String!
     password: String!
   }
@@ -90,6 +96,9 @@ export const typeDefs = gql`
   input AddProjectInput {
     name: String!
     description: String!
+  }
+  input AddSkillInput {
+    name: String!
   }
   input UpdateProfileInput {
     email: String!
@@ -127,6 +136,9 @@ export const typeDefs = gql`
   type AddProjectPayload {
     project: Project!
   }
+  type AddSkillPayload {
+    skill: Skill!
+  }
 
   type UpdateProfilePayload {
     profile: Profile!
@@ -150,6 +162,7 @@ export const typeDefs = gql`
     signUp(input: SignUpInput!): SignUpPayload!
     addProfile(input: AddProfileInput!): AddProfilePayload!
     addProject(input: AddProjectInput!): AddProjectPayload!
+    addSkill(input: AddSkillInput!): AddSkillPayload!
     updateProfile(input: UpdateProfileInput!): UpdateProfilePayload!
     deleteProfile(id: ID!): Profile!
     signIn(input: SignInInput!): SignInPayload!

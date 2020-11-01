@@ -9,42 +9,24 @@ const ViewerQuery = gql`
   query ViewerQuery {
     viewer {
       id
+      name
       email
-    }
-  }
-`;
-const ProfileQuery = gql`
-  query ProfileQuery {
-    profile {
-      id
-      image
-      firstName
-      lastName
-      title
-      email
-      address1
-      address2
-      city
-      state
-      zip
-      country
-      bio
-      skills
     }
   }
 `;
 
 const Profile = () => {
   const router = useRouter();
-  const { data, loading, error } = useQuery(ViewerQuery, ProfileQuery);
+  const { data, loading, error } = useQuery(ViewerQuery);
+  // FIXME Need to render profile, project, skills info on
   const viewer = data?.viewer;
-  const profile = data?.profile;
   const shouldRedirect = !(loading || error || viewer);
 
   useEffect(() => {
     if (shouldRedirect) {
       router.push("/signin");
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shouldRedirect]);
 
@@ -62,9 +44,11 @@ const Profile = () => {
                 <div className="card-body">
                   <h5 className="card-title">
                     <span className="float-right">
-                      <a>
-                        <FontAwesomeIcon icon="user-edit" />
-                      </a>
+                      <Link href="/add-profile">
+                        <a>
+                          <FontAwesomeIcon icon="user-edit" />
+                        </a>
+                      </Link>
                     </span>
                   </h5>
                   <img
@@ -73,7 +57,7 @@ const Profile = () => {
                     alt="First Name"
                   ></img>
                   <small>{viewer.email}</small>
-                  <h3>Crystal McNeil</h3>
+                  <h3>{viewer.name}</h3>
                   <p className="card-text">Software Engineer</p>
                 </div>
               </div>
@@ -128,7 +112,11 @@ const Profile = () => {
                   <h6 className="card-subtitle mb-3 text-muted">
                     Add Skills{" "}
                     <span className="ml-2">
-                      <FontAwesomeIcon icon="plus" />
+                      <Link href="/add-skill">
+                        <a>
+                          <FontAwesomeIcon icon="plus" />
+                        </a>
+                      </Link>
                     </span>
                   </h6>
                   <div className="border-top border-dark my-3">

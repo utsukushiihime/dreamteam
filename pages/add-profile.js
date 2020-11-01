@@ -94,7 +94,7 @@ function AddProfile() {
   return (
     <Layout>
       <div className="container text-left">
-        <h1>Add Profile Info</h1>
+        <h1>Add/Edit Profile Info</h1>
         <form onSubmit={handleSubmit}>
           {errorMsg && (
             <p>

@@ -6,10 +6,11 @@ import { getErrorMessage } from "../lib/form";
 import Field from "../components/field";
 
 const SignUpMutation = gql`
-  mutation SignUpMutation($email: String!, $password: String!) {
-    signUp(input: { email: $email, password: $password }) {
+  mutation SignUpMutation($name: String!, $email: String!, $password: String!) {
+    signUp(input: { name: $name, email: $email, password: $password }) {
       user {
         id
+        name
         email
       }
     }
@@ -23,12 +24,14 @@ function SignUp() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    const nameElement = event.currentTarget.elements.name;
     const emailElement = event.currentTarget.elements.email;
     const passwordElement = event.currentTarget.elements.password;
 
     try {
       await signUp({
         variables: {
+          name: nameElement.value,
           email: emailElement.value,
           password: passwordElement.value,
         },
@@ -45,6 +48,13 @@ function SignUp() {
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         {errorMsg && <p>{errorMsg}</p>}
+        <Field
+          name="name"
+          type="text"
+          autoComplete="name"
+          required
+          label="Name"
+        />
         <Field
           name="email"
           type="email"
