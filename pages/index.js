@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import Layout from "../components/layout";
+import Link from "next/link";
 
 const ViewerQuery = gql`
   query ViewerQuery {
@@ -22,13 +23,29 @@ const Index = () => {
           <small>Welcome back, {viewer.name}</small>
 
           <div className="row mt-5">
-            <div className="col">
-              <h1 className="text-center">
+            <div className="col px-3">
+              <h1>
                 Create your
                 <br /> Dream Team
               </h1>
+              <div className="row">
+                <div className="col d-flex align-content-stretch flex-wrap">
+                  <button className="btn btn-purple btn-block">
+                    Learn More
+                  </button>
+                </div>
+                <div className="col">
+                  <Link href="/contact">
+                    <button className="btn btn-purple-outline btn-block">
+                      Contact Us
+                    </button>
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="col">This is a row</div>
+            <div className="col">
+              <img className="img-fluid" src="/images/team.png" />
+            </div>
           </div>
         </div>
       </Layout>
@@ -37,9 +54,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <div className="container">
-        <h1>Welcome</h1>
-      </div>
+      <div className="container"></div>
     </Layout>
   );
 };
