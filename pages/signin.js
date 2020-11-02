@@ -46,32 +46,50 @@ function SignIn() {
   }
 
   return (
-    <div className="form-signin">
-      <h1>Sign In</h1>
-      <form onSubmit={handleSubmit}>
-        {errorMsg && <p>{errorMsg}</p>}
-        <Field
-          name="email"
-          type="email"
-          autoComplete="email"
-          required
-          label="Email"
-        />
-        <Field
-          name="password"
-          type="password"
-          autoComplete="password"
-          required
-          label="Password"
-        />
-        <button className="btn btn-purple" type="submit">
-          Sign in
-        </button>{" "}
-        or{" "}
-        <Link href="signup">
-          <button className="btn btn-purple">Sign up</button>
-        </Link>
-      </form>
+    <div className="container mt-5">
+      <div className="row">
+        <div className="col d-flex align-content-stretch flex-wrap">
+          <div className="form-signin">
+            <h1>Sign In</h1>
+            <p>
+              Failure will never overtake me if my determination to succeed is
+              strong enough.
+            </p>
+            <form onSubmit={handleSubmit}>
+              {errorMsg && <p>{errorMsg}</p>}
+              <Field
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+                label="Email"
+              />
+              <Field
+                name="password"
+                type="password"
+                autoComplete="password"
+                required
+                label="Password"
+              />
+              <button
+                className="btn btn-purple btn-lg btn-block mb-3"
+                type="submit"
+              >
+                Sign in
+              </button>{" "}
+              <small>
+                Don't have an account?{" "}
+                <Link href="signup">
+                  <a className="mt-3">Sign Up</a>
+                </Link>
+              </small>
+            </form>
+          </div>
+        </div>
+        <div className="col d-flex align-content-stretch flex-wrap">
+          <img className="img-fluid" src="/images/teamwork_1.png" />
+        </div>
+      </div>
     </div>
   );
 }
