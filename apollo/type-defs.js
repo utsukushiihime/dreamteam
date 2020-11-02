@@ -150,6 +150,7 @@ export const typeDefs = gql`
     viewer: User
     profile(id: ID!): Profile!
     profiles: [Profile]!
+    member: Profile
     skill(id: ID!): Skill!
     skills: Skill
     project(id: ID!): Project!

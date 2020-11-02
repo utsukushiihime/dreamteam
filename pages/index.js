@@ -19,7 +19,7 @@ const Index = () => {
     return (
       <Layout>
         <div className="container text-left">
-          <h6>Welcome, {viewer.name}</h6>
+          <small>Welcome back, {viewer.name}</small>
 
           <div className="row mt-5">
             <div className="col">

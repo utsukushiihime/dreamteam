@@ -21,43 +21,15 @@ export const resolvers = {
         );
       }
     },
-    async profile(_parent, _args, context, _info) {
+    async member(_parent, _args, context, _info) {
       try {
-        const session = await getLoginSession(context.req);
+        const result = await getLoginSession(context.req);
 
-        if (session) {
-          return findProfile({ id: profile.id });
+        if (result) {
+          return findProfile({ id: result.id });
         }
       } catch (error) {
-        throw new UserInputError(
-          `${error}. Please try again. Contact <support@creativarian.com> to report user errors.`
-        );
-      }
-    },
-    async project(_parent, _args, context, _info) {
-      try {
-        const session = await getLoginSession(context.req);
-
-        if (session) {
-          return findProject({ id: project.id });
-        }
-      } catch (error) {
-        throw new UserInputError(
-          `${error}. Please try again. Contact <support@creativarian.com> to report project errors.`
-        );
-      }
-    },
-    async skill(_parent, _args, context, _info) {
-      try {
-        const session = await getLoginSession(context.req);
-
-        if (session) {
-          return findSkill({ id: skill.id });
-        }
-      } catch (error) {
-        throw new UserInputError(
-          `${error}. Please try again. Contact <support@creativarian.com> to report project errors.`
-        );
+        throw new UserInputError("Sorry, there was an error.");
       }
     },
   },
