@@ -21,7 +21,7 @@ export const resolvers = {
         );
       }
     },
-    async member(_parent, _args, context, _info) {
+    async profile(_parent, _args, context, _info) {
       try {
         const result = await getLoginSession(context.req);
 
