@@ -12,7 +12,7 @@ const ViewerQuery = gql`
   }
 `;
 
-export default function Header(profile) {
+export default function Header() {
   const { data } = useQuery(ViewerQuery);
   const viewer = data?.viewer;
   if (viewer) {
@@ -48,7 +48,7 @@ export default function Header(profile) {
           </ul>
           <ul className="nav">
             <li className="nav-item">
-              <Link href="/profile/">
+              <Link href="/profile/[id]" as={`/profile/${viewer.id}`}>
                 <a className="nav-link">
                   <span className="font-weight-bold mr-2">{viewer.name}</span>
                   <span className="float-right px-0">

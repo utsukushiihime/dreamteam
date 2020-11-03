@@ -5,12 +5,11 @@ import { gql, useQuery } from "@apollo/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Layout from "../../../components/layout";
 
-const ProfileQuery = gql`
-  query ProfileQuery {
-    profile {
+const ViewerQuery = gql`
+  query ViewerQuery {
+    viewer {
       id
-      firstName
-      lastName
+      name
       email
     }
   }
@@ -18,11 +17,11 @@ const ProfileQuery = gql`
 
 const Profile = () => {
   const router = useRouter();
-  const { id } = router.query;
-  const { data, loading, error } = useQuery(ProfileQuery);
+  //   const { id } = router.query;
+  const { data, loading, error } = useQuery(ViewerQuery);
   // FIXME Need to render profile, project, skills info on
 
-  const profile = data?.profile;
+  const viewer = data?.viewer;
 
   return (
     <Layout>
@@ -45,8 +44,8 @@ const Profile = () => {
                   className="card-img-top mx-auto d-block"
                   alt="First Name"
                 ></img>
-                <small>{id}</small>
-                <h3>Dynamic Name</h3>
+                <small>{viewer.email}</small>
+                <h3>{viewer.name}</h3>
                 <p className="card-text">Software Engineer</p>
               </div>
             </div>
