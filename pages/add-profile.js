@@ -85,7 +85,7 @@ function AddProfile() {
           country: countryElement.value,
         },
       });
-      await router.push("/profile");
+      await router.push(`/profile?id=${id}`);
     } catch (error) {
       setErrorMsg(getErrorMessage(error));
     }
