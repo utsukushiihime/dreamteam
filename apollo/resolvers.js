@@ -21,15 +21,17 @@ export const resolvers = {
         );
       }
     },
-    async member(_parent, _args, context, _info) {
+    async project(_parent, _args, context, _info) {
       try {
-        const result = await getLoginSession(context.req);
+        const session = await findProject(context.req);
 
-        if (result) {
-          return findProfile({ id: result.id });
+        if (session) {
+          return findProject({ id: session.id });
         }
       } catch (error) {
-        throw new UserInputError("Sorry, there was an error.");
+        throw new AuthenticationError(
+          "Authentication token is invalid, please log in"
+        );
       }
     },
   },
@@ -41,11 +43,6 @@ export const resolvers = {
     async addProject(_parent, args, _context, _info) {
       const project = await createProject(args.input);
       return { project };
-    },
-
-    async addProfile(_parent, args, _context, _info) {
-      const profile = await createProfile(args.input);
-      return { profile };
     },
 
     async signUp(_parent, args, _context, _info) {

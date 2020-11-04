@@ -44,6 +44,13 @@ h4,
 h6 {
   color: #5c31ca;
 }
+.bg-dark {
+  background-color: #1c242f!important
+}
+
+.text-success {
+  color: #7ec699;
+}
 
 .svg-inline--fa {
   color: #5c31ca;
