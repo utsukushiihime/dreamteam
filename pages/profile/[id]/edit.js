@@ -1,8 +1,4 @@
-
-import { useEffect } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { gql, useQuery, useMutation } from "@apollo/client";
+import { gql, useMutation } from "@apollo/client";
 
 
 const UpdateUserProfileMutation = gql`
@@ -21,7 +17,7 @@ const UpdateUserProfileMutation = gql`
     $password: String!
   ) {
     updateUserProfile(
-      input: {
+      {
         id: $id
         image: $image
         name: $name
@@ -54,13 +50,13 @@ const UpdateUserProfileMutation = gql`
 `;
 
 function UpdateUserProfile() {
-    cons [updateUserProfile] = useMutation(UpdateUserProfile)
+    cons [updateUserProfile] = useMutation(UpdateUserProfileMutation)
 
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  return data.todos.map(({ id, image, name, title, email, bio, address, city, state, zip, skills }) => {
+  return data.user.map(({ id, image, name, title, email, bio, address, city, state, zip, skills }) => {
     let input;
 
     return (

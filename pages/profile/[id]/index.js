@@ -39,7 +39,7 @@ const Profile = () => {
                 <div className="card-body">
                   <h5 className="card-title">
                     <span className="float-right">
-                      <Link href="/add-profile">
+                    <Link href="/profile/[id]/edit" as={`/profile/${viewer.id}/edit`}>
                         <a>
                           <FontAwesomeIcon icon="user-edit" />
                         </a>
