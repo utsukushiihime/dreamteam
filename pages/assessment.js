@@ -5,7 +5,7 @@ export default function Assessment() {
   return (
     <Layout>
       <div className="container mt-5">
-        <h1>Assessment</h1>
+        <h1>Test your skills</h1>
         <div className="row mt-5">
           <div className="col text-left">
             <h5>Coming Soon - Phase II</h5>
@@ -13,8 +13,8 @@ export default function Assessment() {
             <p className="mb-4">
               The QuizAPI is a SaaS which lets you test your knowledge on a wide
               variety of technical topics. You can create your own Quiz or get
-              random set of questions for a speicifc topic including Linux,
-              DevOps, BASH, PHP and lots more. We offer an easy to use API which
+              random set of questions for a specific topic including Linux,
+              DevOps, BASH, PHP, Javascript, and lots more. QuizAPI offers an easy to use API which
               allows you to embed the quiz on your own website.
               <br />
             </p>
