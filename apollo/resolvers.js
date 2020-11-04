@@ -21,6 +21,19 @@ export const resolvers = {
         );
       }
     },
+    async project(_parent, _args, context, _info) {
+      try {
+        const session = await findProject(context.req);
+
+        if (session) {
+          return findProject({ id: session.id });
+        }
+      } catch (error) {
+        throw new AuthenticationError(
+          "Authentication token is invalid, please log in"
+        );
+      }
+    },
   },
   Mutation: {
     async addSkill(_parent, args, _context, _info) {
@@ -31,7 +44,6 @@ export const resolvers = {
       const project = await createProject(args.input);
       return { project };
     },
-
 
     async signUp(_parent, args, _context, _info) {
       const user = await createUser(args.input);
