@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery, useMutation } from "@apollo/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Layout from "../../../components/layout";
 
@@ -32,11 +32,16 @@ const ProjectQuery = gql`
   }
 `;
 
-const Profile = () => {
-  const { data } = useQuery(ViewerQuery, ProjectQuery);
+
+
+  
+const Profile = (id) => {
+  const { data } =  useQuery(ViewerQuery, ProjectQuery);
   const viewer = data?.viewer;
 
-  if (viewer) {
+
+
+  if (viewer && data) {
     return (
       <Layout>
         <div className="container">
@@ -58,7 +63,6 @@ const Profile = () => {
                     className="card-img-top mx-auto d-block"
                     alt="First Name"
                   />
-
                   <small>{viewer.email}</small>
                   <h3>{viewer.name}</h3>
                   <p className="card-text">{viewer.title}</p>

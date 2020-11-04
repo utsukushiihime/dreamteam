@@ -1,6 +1,5 @@
 import { AuthenticationError, UserInputError } from "apollo-server-micro";
 import { createUser, findUser, validatePassword } from "../lib/user";
-import { createProfile, findProfile } from "../lib/profile";
 import { createProject, findProject } from "../lib/project";
 import { createSkill, findSkill } from "../lib/skill";
 import { setLoginSession, getLoginSession } from "../lib/auth";
