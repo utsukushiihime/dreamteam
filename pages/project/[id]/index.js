@@ -8,8 +8,14 @@ const Project = () => {
 
   return (
     <Layout>
-     <h1>Project: {id}</h1>
-     <h2>Name: {name}</h2>
+     <h1>Your Projects:</h1>
+     <h2>Project Name: {name}</h2>
+     <h6>
+       Project Description:
+      </h6>
+     <p>
+      {description}
+     </p>
      
     </Layout>
   )

@@ -22,26 +22,14 @@ const ViewerQuery = gql`
     }
   }
 `;
-const ProjectQuery = gql`
-  query ProjectQuery {
-    project {
-      id
-      name
-      description
-    }
-  }
-`;
-
-
 
   
-const Profile = (id) => {
-  const { data } =  useQuery(ViewerQuery, ProjectQuery);
+const Profile = () => {
+  const { data } =  useQuery(ViewerQuery);
   const viewer = data?.viewer;
 
 
-
-  if (viewer && data) {
+  if (viewer) {
     return (
       <Layout>
         <div className="container">
@@ -105,12 +93,14 @@ const Profile = (id) => {
                       additional content.
                     </p>
                   </div>
-                  <a
-                    href="/project/"
-                    className="btn btn-purple-outline btn-block"
+                  <Link href="/project/all"
+                    >
+                  <a className="btn btn-purple-outline btn-block"
+                    
                   >
                     View Projects
                   </a>
+                  </Link>
                 </div>
               </div>
               <div className="card mb-4 text-left">
