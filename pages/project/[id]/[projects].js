@@ -1,17 +1,17 @@
-import { useRouter } from 'next/router'
-import Header from '../../../components/header'
+import { useRouter } from "next/router";
+import Header from "../../../components/header";
 
 const Projects = () => {
-  const router = useRouter()
-  const { id, projects } = router.query
+  const router = useRouter();
+  const { id, projects } = router.query;
 
   return (
     <>
       <Header />
-      <h1>ID: {id}</h1>
-      <h1>Project: {projects}</h1>
+      <h1>Post: </h1>
+      <h1>Comment: </h1>
     </>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

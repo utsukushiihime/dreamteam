@@ -20,17 +20,19 @@ export const resolvers = {
         );
       }
     },
-    async project(_parent, _args, context, _info) {
+    async getProject(_parent, _args, context, _info) {
       try {
-        const session = await findProject(context.req);
+        const project = await findProject(context.req);
 
-        if (session) {
-          return findProject({ id: session.id });
+        if (project) {
+          return findProject({
+            id: project.id,
+            name: project.name,
+            description: project.description,
+          });
         }
       } catch (error) {
-        throw new AuthenticationError(
-          "Authentication token is invalid, please log in"
-        );
+        throw new UserInputError("Cannot find. Sorry about that. Try again!");
       }
     },
   },

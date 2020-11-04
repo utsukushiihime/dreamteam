@@ -109,6 +109,7 @@ export const typeDefs = gql`
     user(id: ID!): User!
     users: [User]!
     viewer: User
+    getProject: Project
     skill(id: ID!): Skill!
     project(id: ID!): Project!
     projects: Project
