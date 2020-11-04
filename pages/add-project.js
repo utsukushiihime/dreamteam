@@ -38,7 +38,7 @@ function AddProject() {
           description: descriptionElement.value,
         },
       });
-      await router.push("/project/${id}");
+      await router.push("/project/");
     } catch (error) {
       setErrorMsg(getErrorMessage(error));
     }
