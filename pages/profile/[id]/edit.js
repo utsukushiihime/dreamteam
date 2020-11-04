@@ -65,7 +65,7 @@ function UpdateUserProfile() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            updateUserProfile({ variables: { id, type: input.value } });
+            updateUserProfile({ variables: { id, image: input.value, name: input.value, title: input.value, email: input.value, bio: input.value, address: input.value, city: input.value, state: input.value, zip: input.value, skills: input.value  } });
             input.value = "";
           }}
         >

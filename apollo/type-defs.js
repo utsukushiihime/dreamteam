@@ -14,7 +14,7 @@ export const typeDefs = gql`
     state: String
     zip: Int
     skills: String
-    projects: [Project]
+    project: [Project]
     skill: [Skill]
     assessments: [Assessment]
   }
