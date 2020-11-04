@@ -21,17 +21,6 @@ export const resolvers = {
         );
       }
     },
-    async profile(_parent, _args, context, _info) {
-      try {
-        const result = await getProfile(context.req);
-
-        if (result) {
-          return findProfile({ id: result.id });
-        }
-      } catch (error) {
-        throw new UserInputError("Sorry, there was an error.");
-      }
-    },
   },
   Mutation: {
     async addSkill(_parent, args, _context, _info) {
@@ -43,10 +32,6 @@ export const resolvers = {
       return { project };
     },
 
-    async addProfile(_parent, args, _context, _info) {
-      const profile = await createProfile(args.input);
-      return { profile };
-    },
 
     async signUp(_parent, args, _context, _info) {
       const user = await createUser(args.input);

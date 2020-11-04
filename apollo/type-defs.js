@@ -3,38 +3,20 @@ import { gql } from "@apollo/client";
 export const typeDefs = gql`
   type User {
     id: ID!
+    createdAt: Int!
+    image: String
     name: String!
     title: String
     email: String!
-    createdAt: Int!
-    profile: Profile
-    projects: [Project]
-    skills: [Skill]
-    assessments: [Assessment]
-  }
-
-  type Profile {
-    id: ID!
-    image: String
-    email: String!
-    firstName: String!
-    lastName: String!
-    title: String
-    address1: String
-    address2: String
-    city: String!
+    bio: String
+    address: String
+    city: String
     state: String
     zip: Int
-    country: String!
-    bio: String
     skills: String
-    twitter: String
-    facebook: String
-    linkedin: String
-    github: String
-    youtube: String
-    createdAt: Int
-    user: User
+    projects: [Project]
+    skill: [Skill]
+    assessments: [Assessment]
   }
 
   type Project {
@@ -67,6 +49,14 @@ export const typeDefs = gql`
     name: String!
     email: String!
     password: String!
+    title: String
+    image: String
+    address: String
+    city: String
+    state: String
+    zip: Int
+    bio: String
+    skills: String
   }
 
   input SignInInput {
@@ -74,52 +64,12 @@ export const typeDefs = gql`
     password: String!
   }
 
-  input AddProfileInput {
-    image: String
-    email: String!
-    firstName: String!
-    lastName: String!
-    title: String
-    address1: String
-    address2: String
-    city: String!
-    state: String
-    zip: Int
-    country: String!
-    bio: String
-    skills: String
-    twitter: String
-    facebook: String
-    linkedin: String
-    github: String
-    youtube: String
-  }
   input AddProjectInput {
     name: String!
     description: String!
   }
   input AddSkillInput {
     name: String!
-  }
-  input UpdateProfileInput {
-    email: String!
-    image: String
-    firstName: String!
-    lastName: String!
-    title: String
-    address1: String
-    address2: String
-    city: String!
-    state: String
-    zip: Int
-    country: String!
-    bio: String
-    skills: String
-    twitter: String
-    facebook: String
-    linkedin: String
-    github: String
-    youtube: String
   }
 
   type SignUpPayload {
@@ -130,10 +80,6 @@ export const typeDefs = gql`
     user: User!
   }
 
-  type AddProfilePayload {
-    profile: Profile!
-  }
-
   type AddProjectPayload {
     project: Project!
   }
@@ -141,19 +87,11 @@ export const typeDefs = gql`
     skill: Skill!
   }
 
-  type UpdateProfilePayload {
-    profile: Profile!
-  }
-
   type Query {
     user(id: ID!): User!
     users: [User]!
     viewer: User
-    profile(id: ID!): Profile!
-    profiles: [Profile]!
-    member: Profile
     skill(id: ID!): Skill!
-    skills: Skill
     project(id: ID!): Project!
     projects: Project
     assessment(id: ID!): Assessment!
@@ -162,11 +100,8 @@ export const typeDefs = gql`
 
   type Mutation {
     signUp(input: SignUpInput!): SignUpPayload!
-    addProfile(input: AddProfileInput!): AddProfilePayload!
     addProject(input: AddProjectInput!): AddProjectPayload!
     addSkill(input: AddSkillInput!): AddSkillPayload!
-    updateProfile(input: UpdateProfileInput!): UpdateProfilePayload!
-    deleteProfile(id: ID!): Profile!
     signIn(input: SignInInput!): SignInPayload!
     signOut: Boolean!
   }

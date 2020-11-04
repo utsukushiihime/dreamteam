@@ -4,14 +4,49 @@ import Link from "next/link";
 import { gql, useMutation } from "@apollo/client";
 import { getErrorMessage } from "../lib/form";
 import Field from "../components/field";
+import TextArea from "../components/textarea";
 
 const SignUpMutation = gql`
-  mutation SignUpMutation($name: String!, $email: String!, $password: String!) {
-    signUp(input: { name: $name, email: $email, password: $password }) {
+  mutation SignUpMutation(
+    $image: String
+    $name: String!
+    $title: String
+    $email: String!
+    $bio: String
+    $address: String
+    $city: String
+    $state: String
+    $zip: Int
+    $skills: String
+    $password: String!
+  ) {
+    signUp(
+      input: {
+        image: $image
+        name: $name
+        title: $title
+        email: $email
+        bio: $bio
+        address: $address
+        city: $city
+        state: $state
+        zip: $zip
+        skills: $skills
+        password: $password
+      }
+    ) {
       user {
         id
+        image
         name
+        title
         email
+        bio
+        address
+        city
+        state
+        zip
+        skills
       }
     }
   }
@@ -24,15 +59,31 @@ function SignUp() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    const imageElement = event.currentTarget.elements.image;
     const nameElement = event.currentTarget.elements.name;
+    const titleElement = event.currentTarget.elements.title;
     const emailElement = event.currentTarget.elements.email;
+    const bioElement = event.currentTarget.elements.bio;
+    const addressElement = event.currentTarget.elements.address;
+    const cityElement = event.currentTarget.elements.city;
+    const stateElement = event.currentTarget.elements.state;
+    const zipElement = event.currentTarget.elements.zip;
+    const skillsElement = event.currentTarget.elements.skills;
     const passwordElement = event.currentTarget.elements.password;
 
     try {
       await signUp({
         variables: {
+          image: imageElement.value,
           name: nameElement.value,
+          title: titleElement.value,
           email: emailElement.value,
+          bio: bioElement.value,
+          address: addressElement.value,
+          city: cityElement.value,
+          state: stateElement.value,
+          zip: parseInt(zipElement.value),
+          skills: skillsElement.value,
           password: passwordElement.value,
         },
       });
@@ -82,6 +133,45 @@ function SignUp() {
                 autoComplete="password"
                 required
                 label="Password"
+              />
+              <h4>Profile Info</h4>
+              <Field
+                name="title"
+                type="text"
+                autoComplete="title"
+                label="Title"
+              />
+              <Field
+                name="image"
+                type="text"
+                autoComplete="image"
+                label="Profile Image URL"
+              />
+              <Field
+                name="address"
+                type="text"
+                autoComplete="address"
+                label="Address"
+              />
+              <Field name="city" type="text" autoComplete="city" label="City" />
+              <Field
+                name="state"
+                type="text"
+                autoComplete="state"
+                label="State"
+              />
+              <Field name="zip" type="number" autoComplete="zip" label="Zip" />
+              <TextArea
+                name="bio"
+                type="textarea"
+                autoComplete="bio"
+                label="Bio"
+              />
+              <TextArea
+                name="skills"
+                type="textarea"
+                autoComplete="skills"
+                label="Skills"
               />
               <button
                 className="btn btn-purple btn-lg btn-block mb-3"
