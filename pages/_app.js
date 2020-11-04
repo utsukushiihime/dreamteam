@@ -14,6 +14,8 @@ import {
   faSignInAlt,
   faUserPlus,
   faHouseUser,
+  faTimesCircle,
+  faPlusCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -26,7 +28,9 @@ library.add(
   faSignOutAlt,
   faSignInAlt,
   faUserPlus,
-  faHouseUser
+  faHouseUser,
+  faTimesCircle,
+  faPlusCircle
 );
 
 export default function App({ Component, pageProps }) {

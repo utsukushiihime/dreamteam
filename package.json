@@ -29,6 +29,7 @@
     "react-dom": "^16.7.0",
     "react-icons": "^3.11.0",
     "serverless-mysql": "^1.5.4",
+    "use-boolean-state": "^1.0.1",
     "uuid": "8.1.0"
   },
   "license": "MIT"

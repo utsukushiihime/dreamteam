@@ -19,13 +19,8 @@ const ViewerQuery = gql`
       city
       state
       zip
-    }.
-    project {
-      id
-      name
-      description
     }
-
+    [project]
   }
 `;
 const ProjectQuery = gql`
@@ -40,7 +35,7 @@ const ProjectQuery = gql`
 
 const Profile = () => {
   const { data } = useQuery(ViewerQuery, ProjectQuery);
-  const {viewer, project} = data?.viewer;
+  const viewer = data?.viewer;
 
   if (viewer) {
     return (
@@ -102,7 +97,7 @@ const Profile = () => {
                     </p>
                   </div>
                   <a
-                    href="/project/[id]" as={`/project/${project.id}`}
+                    href="/project"
                     className="btn btn-purple-outline btn-block"
                   >
                     View Projects

@@ -5,6 +5,7 @@ import { gql, useMutation } from "@apollo/client";
 import { getErrorMessage } from "../lib/form";
 import Field from "../components/field";
 import TextArea from "../components/textarea";
+import ToggleContent from "../components/toggle";
 
 const SignUpMutation = gql`
   mutation SignUpMutation(
@@ -98,21 +99,26 @@ function SignUp() {
     <div className="container mt-5">
       <div className="row">
         <div className="col d-flex align-content-stretch flex-wrap">
-          <img className="img-fluid" src="/images/teamwork_2.png" />
+          <div className="container">
+            <img className="img-fluid" src="/images/teamwork_2.png" />
+          </div>
         </div>
         <div className="col d-flex align-content-stretch flex-wrap">
           <div className="form-signin">
             <h1>Sign Up</h1>
             <p>
               Let us first talk about dreams. We all know that dreams do play a
-              role in our daily lives. The majority of people pay little
-              attention to dreams. Dreams can help us find solutions to our
+              role in our daily lives. Dreams can help us find solutions to our
               daily problems and see things from a different perspective.
-              Whenever we are dreaming, we can be who or what we want to be,
-              regardless of the fact that in real life,{" "}
             </p>
             <form onSubmit={handleSubmit}>
-              {errorMsg && <p>{errorMsg}</p>}
+              {errorMsg && (
+                <div className="alert alert-danger">
+                  Houston, we have a problem. Please fill out all profile
+                  information. <br />
+                  {errorMsg}
+                </div>
+              )}
               <Field
                 name="name"
                 type="text"
@@ -134,45 +140,70 @@ function SignUp() {
                 required
                 label="Password"
               />
-              <h4>Profile Info</h4>
-              <Field
-                name="title"
-                type="text"
-                autoComplete="title"
-                label="Title"
-              />
-              <Field
-                name="image"
-                type="text"
-                autoComplete="image"
-                label="Profile Image URL"
-              />
-              <Field
-                name="address"
-                type="text"
-                autoComplete="address"
-                label="Address"
-              />
-              <Field name="city" type="text" autoComplete="city" label="City" />
-              <Field
-                name="state"
-                type="text"
-                autoComplete="state"
-                label="State"
-              />
-              <Field name="zip" type="number" autoComplete="zip" label="Zip" />
-              <TextArea
-                name="bio"
-                type="textarea"
-                autoComplete="bio"
-                label="Bio"
-              />
-              <TextArea
-                name="skills"
-                type="textarea"
-                autoComplete="skills"
-                label="Skills"
-              />
+              <h4>Required Profile Info</h4>
+              <ToggleContent>
+                <Field
+                  name="title"
+                  type="text"
+                  autoComplete="title"
+                  required
+                  label="Title"
+                />
+                <Field
+                  name="image"
+                  type="text"
+                  autoComplete="image"
+                  required
+                  label="Profile Image URL"
+                />
+                <Field
+                  name="address"
+                  type="text"
+                  autoComplete="address"
+                  required
+                  label="Address"
+                />
+                <div className="row">
+                  <div className="col-8">
+                    <Field
+                      name="city"
+                      type="text"
+                      autoComplete="city"
+                      required
+                      label="City"
+                    />
+                  </div>
+                  <div className="col">
+                    <Field
+                      name="state"
+                      type="text"
+                      autoComplete="state"
+                      required
+                      label="State"
+                    />
+                  </div>
+                </div>
+                <Field
+                  name="zip"
+                  type="number"
+                  autoComplete="zip"
+                  label="Zip"
+                />
+                <TextArea
+                  name="bio"
+                  type="textarea"
+                  autoComplete="bio"
+                  required
+                  label="Bio"
+                />
+                <TextArea
+                  name="skills"
+                  type="textarea"
+                  autoComplete="skills"
+                  required
+                  label="Skills (comma separated)"
+                />
+              </ToggleContent>
               <button
                 className="btn btn-purple btn-lg btn-block mb-3"
                 type="submit"
