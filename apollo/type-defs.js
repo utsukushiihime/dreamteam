@@ -43,9 +43,23 @@ export const typeDefs = gql`
     question: String!
     answer: String!
     skill: Skill
+    user: User
   }
 
   input SignUpInput {
+    name: String!
+    email: String!
+    password: String!
+    title: String
+    image: String
+    address: String
+    city: String
+    state: String
+    zip: Int
+    bio: String
+    skills: String
+  }
+  input UpdateUserProfileInput {
     name: String!
     email: String!
     password: String!
@@ -80,6 +94,10 @@ export const typeDefs = gql`
     user: User!
   }
 
+  type UpdateUserProfilePayload {
+    user: User!
+  }
+
   type AddProjectPayload {
     project: Project!
   }
@@ -102,6 +120,8 @@ export const typeDefs = gql`
     signUp(input: SignUpInput!): SignUpPayload!
     addProject(input: AddProjectInput!): AddProjectPayload!
     addSkill(input: AddSkillInput!): AddSkillPayload!
+    updateUser(input: UpdateUserProfileInput!): UpdateUserProfilePayload!
+    deleteUser(id: ID!): ID!
     signIn(input: SignInInput!): SignInPayload!
     signOut: Boolean!
   }
