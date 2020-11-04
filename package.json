@@ -32,5 +32,8 @@
     "use-boolean-state": "^1.0.1",
     "uuid": "8.1.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@prisma/cli": "^2.10.2"
+  }
 }
