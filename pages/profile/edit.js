@@ -60,7 +60,7 @@ function UpdateUserProfile() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  return data.todos.map(({ id, type }) => {
+  return data.todos.map(({ id, image, name, title, email, bio, address, city, state, zip, skills }) => {
     let input;
 
     return (
@@ -69,7 +69,7 @@ function UpdateUserProfile() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            updateTodo({ variables: { id, type: input.value } });
+            updateUserProfile({ variables: { id, type: input.value } });
             input.value = "";
           }}
         >
