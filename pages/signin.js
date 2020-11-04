@@ -87,7 +87,7 @@ function SignIn() {
           </div>
         </div>
         <div className="col d-flex align-content-stretch flex-wrap">
-          <img className="img-fluid" src="/images/teamwork_1.png" />
+          <img className="img-fluid mx-auto d-block" src="/images/teamwork_1.png" />
         </div>
       </div>
     </div>

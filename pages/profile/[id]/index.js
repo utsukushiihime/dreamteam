@@ -42,7 +42,7 @@ const Profile = () => {
         <div className="container">
           <div className="row">
             <div className="col">
-              <div className="card mb-4 text-left">
+              <div className="card text-left">
                 <div className="card-body">
                   <h5 className="card-title">
                     <span className="float-right">
@@ -62,6 +62,12 @@ const Profile = () => {
                   <small>{viewer.email}</small>
                   <h3>{viewer.name}</h3>
                   <p className="card-text">{viewer.title}</p>
+                </div>
+              </div>
+              <div className="card text-left">
+                <div className="card-body">
+                  <h6 className="card-title">Bio</h6>
+                  <p className="card-text">{viewer.bio}</p>
                 </div>
               </div>
               <div className="card mb-4 text-left">
@@ -96,7 +102,7 @@ const Profile = () => {
                     </p>
                   </div>
                   <a
-                    href="/project"
+                    href="/project/"
                     className="btn btn-purple-outline btn-block"
                   >
                     View Projects
