@@ -46,7 +46,7 @@ h6 {
   color: #5c31ca;
 }
 .bg-dark {
-  background-color: #1c242f!important
+  background-color: #1c242f !important;
 }
 
 .text-success {
@@ -94,6 +94,14 @@ li.nav-item {
 .btn-purple:hover {
   background: #381d7e;
   color: #fff !important;
+}
+button.btn.btn-purple-outline.btn-block:hover,
+a.btn.btn-purple-outline.btn-block:hover,
+button.btn.btn-purple:hover {
+  background-color: #fb22b1;
+  color: #fff !important;
+  text-decoration: none;
+  border: 1px solid #fb22b1;
 }
 
 .form-signin {

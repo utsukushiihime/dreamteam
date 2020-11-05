@@ -1,6 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import Layout from "../components/layout";
 import Link from "next/link";
+import Tada from "react-reveal/Tada";
 
 const ViewerQuery = gql`
   query ViewerQuery {
@@ -27,10 +28,6 @@ const Index = () => {
                 Create your
                 <br /> Dream Team
               </h1>
-              <p className="my-5">
-                Find the right team members for your project. Harness The Power
-                Of Your Dreams. “Teamwork makes the Dreamwork”
-              </p>
               <div className="row my-4">
                 <div className="col d-flex align-content-stretch flex-wrap">
                   <button className="btn btn-purple btn-block">
@@ -47,7 +44,9 @@ const Index = () => {
               </div>
             </div>
             <div className="col">
-              <img className="img-fluid" src="/images/team.png" />
+              <Tada>
+                <img className="img-fluid" src="/images/team.png" />
+              </Tada>
             </div>
           </div>
         </div>
