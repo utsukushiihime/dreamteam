@@ -75,8 +75,8 @@ function AddProject() {
                 Add Project
               </button>{" "}
               or{" "}
-              <Link href="project">
-                <button className="btn btn-purple">Go to Project</button>
+              <Link href="/project/all">
+                <button className="btn btn-purple">Go to Projects</button>
               </Link>
             </div>
           </div>
