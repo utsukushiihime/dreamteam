@@ -18,23 +18,23 @@ export default function Contact() {
             <form>
               <div className="form-row">
                 <div className="col-md-6 mb-3">
-                  <label for="validationDefault01">First name</label>
+                  <label for="validationDefault01">Name</label>
                   <input
                     type="text"
                     className="form-control"
                     id="validationDefault01"
                     value=""
-                    placeholder="First Name"
+                    placeholder="Name"
                     required
                   />
                 </div>
                 <div className="col-md-6 mb-3">
-                  <label for="validationDefault02">Last name</label>
+                  <label for="validationDefault02">Email</label>
                   <input
-                    type="text"
+                    type="email"
                     className="form-control"
                     id="validationDefault02"
-                    placeholder="Last Name"
+                    placeholder="Email"
                     value=""
                     required
                   />
@@ -75,6 +75,16 @@ export default function Contact() {
                     required
                   />
                 </div>
+              </div>
+              <div className="form-group">
+                <label for="exampleFormControlTextarea1">
+                  Enter your message
+                </label>
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                ></textarea>
               </div>
               <div className="form-group">
                 <div className="form-check">
