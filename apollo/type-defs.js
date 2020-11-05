@@ -101,6 +101,7 @@ export const typeDefs = gql`
   type AddProjectPayload {
     project: Project!
   }
+
   type AddSkillPayload {
     skill: Skill!
   }

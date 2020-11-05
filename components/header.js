@@ -77,7 +77,9 @@ export default function Header() {
       <nav className="navbar fixed-top">
         <ul className="nav justify-content-center">
           <li className="navbar-brand">
-            <img src="/logo.png" alt="DreamTeam" />
+            <Link href="/">
+              <img src="/logo.png" alt="DreamTeam" />
+            </Link>
           </li>
           <li className="nav-item">
             <Link href="/about">
