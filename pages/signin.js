@@ -5,6 +5,7 @@ import { gql } from "@apollo/client";
 import { useMutation, useApolloClient } from "@apollo/client";
 import { getErrorMessage } from "../lib/form";
 import Field from "../components/field";
+import Footer from "../components/footer";
 
 const SignInMutation = gql`
   mutation SignInMutation($email: String!, $password: String!) {
@@ -87,9 +88,13 @@ function SignIn() {
           </div>
         </div>
         <div className="col d-flex align-content-stretch flex-wrap">
-          <img className="img-fluid mx-auto d-block" src="/images/teamwork_1.png" />
+          <img
+            className="img-fluid mx-auto d-block"
+            src="/images/teamwork_1.png"
+          />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import Field from "../components/field";
 import TextArea from "../components/textarea";
 import ToggleContent from "../components/toggle";
 import HeadShake from "react-reveal/HeadShake";
+import Footer from "../components/footer";
 
 const SignUpMutation = gql`
   mutation SignUpMutation(
@@ -222,6 +223,7 @@ function SignUp() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
