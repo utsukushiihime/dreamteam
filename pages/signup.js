@@ -140,7 +140,6 @@ function SignUp() {
                 required
                 label="Password"
               />
-              <h4>Required Profile Info</h4>
               <ToggleContent>
                 <Field
                   name="title"
