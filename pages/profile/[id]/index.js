@@ -23,11 +23,9 @@ const ViewerQuery = gql`
   }
 `;
 
-  
 const Profile = () => {
-  const { data } =  useQuery(ViewerQuery);
+  const { data } = useQuery(ViewerQuery);
   const viewer = data?.viewer;
-
 
   if (viewer) {
     return (
@@ -39,7 +37,10 @@ const Profile = () => {
                 <div className="card-body">
                   <h5 className="card-title">
                     <span className="float-right">
-                    <Link href="/profile/[id]/edit" as={`/profile/${viewer.id}/edit`}>
+                      <Link
+                        href="/profile/[id]/edit"
+                        as={`/profile/${viewer.id}/edit`}
+                      >
                         <a>
                           <FontAwesomeIcon icon="user-edit" />
                         </a>
@@ -93,13 +94,10 @@ const Profile = () => {
                       additional content.
                     </p>
                   </div>
-                  <Link href="/project/all"
-                    >
-                  <a className="btn btn-purple-outline btn-block"
-                    
-                  >
-                    View Projects
-                  </a>
+                  <Link href="/project/all">
+                    <a className="btn btn-purple-outline btn-block">
+                      View Projects
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -184,7 +182,9 @@ const Profile = () => {
   } else {
     return (
       <Layout>
-        <div>This is not the way. </div>
+        <div className="text-center">
+          <img src="/images/loading.gif" alt="" />
+        </div>
       </Layout>
     );
   }
