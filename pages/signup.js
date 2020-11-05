@@ -6,6 +6,7 @@ import { getErrorMessage } from "../lib/form";
 import Field from "../components/field";
 import TextArea from "../components/textarea";
 import ToggleContent from "../components/toggle";
+import HeadShake from "react-reveal/HeadShake";
 
 const SignUpMutation = gql`
   mutation SignUpMutation(
@@ -140,69 +141,71 @@ function SignUp() {
                 required
                 label="Password"
               />
-              <ToggleContent>
-                <Field
-                  name="title"
-                  type="text"
-                  autoComplete="title"
-                  required
-                  label="Title"
-                />
-                <Field
-                  name="image"
-                  type="text"
-                  autoComplete="image"
-                  required
-                  label="Profile Image URL"
-                />
-                <Field
-                  name="address"
-                  type="text"
-                  autoComplete="address"
-                  required
-                  label="Address"
-                />
-                <div className="row">
-                  <div className="col-8">
-                    <Field
-                      name="city"
-                      type="text"
-                      autoComplete="city"
-                      required
-                      label="City"
-                    />
+              <HeadShake>
+                <ToggleContent>
+                  <Field
+                    name="title"
+                    type="text"
+                    autoComplete="title"
+                    required
+                    label="Title"
+                  />
+                  <Field
+                    name="image"
+                    type="text"
+                    autoComplete="image"
+                    required
+                    label="Profile Image URL"
+                  />
+                  <Field
+                    name="address"
+                    type="text"
+                    autoComplete="address"
+                    required
+                    label="Address"
+                  />
+                  <div className="row">
+                    <div className="col-8">
+                      <Field
+                        name="city"
+                        type="text"
+                        autoComplete="city"
+                        required
+                        label="City"
+                      />
+                    </div>
+                    <div className="col">
+                      <Field
+                        name="state"
+                        type="text"
+                        autoComplete="state"
+                        required
+                        label="State"
+                      />
+                    </div>
                   </div>
-                  <div className="col">
-                    <Field
-                      name="state"
-                      type="text"
-                      autoComplete="state"
-                      required
-                      label="State"
-                    />
-                  </div>
-                </div>
-                <Field
-                  name="zip"
-                  type="number"
-                  autoComplete="zip"
-                  label="Zip"
-                />
-                <TextArea
-                  name="bio"
-                  type="textarea"
-                  autoComplete="bio"
-                  required
-                  label="Bio"
-                />
-                <TextArea
-                  name="skills"
-                  type="textarea"
-                  autoComplete="skills"
-                  required
-                  label="Skills (comma separated)"
-                />
-              </ToggleContent>
+                  <Field
+                    name="zip"
+                    type="number"
+                    autoComplete="zip"
+                    label="Zip"
+                  />
+                  <TextArea
+                    name="bio"
+                    type="textarea"
+                    autoComplete="bio"
+                    required
+                    label="Bio"
+                  />
+                  <TextArea
+                    name="skills"
+                    type="textarea"
+                    autoComplete="skills"
+                    required
+                    label="Skills (comma separated)"
+                  />
+                </ToggleContent>
+              </HeadShake>
               <button
                 className="btn btn-purple btn-lg btn-block mb-3"
                 type="submit"
