@@ -122,7 +122,8 @@ button.btn.btn-purple:hover {
 }
 
 .card {
-  background: none;
+  background: #1c1c1d;
+  margin: 5px 0;
 }
 
 .card-img-top {

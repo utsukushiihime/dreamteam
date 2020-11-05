@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { gql, useQuery, useMutation } from "@apollo/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Layout from "../../../components/layout";
+import Spin from "react-reveal/Spin";
 
 const ViewerQuery = gql`
   query ViewerQuery {
@@ -47,11 +48,13 @@ const Profile = () => {
                       </Link>
                     </span>
                   </h5>
-                  <img
-                    src={viewer.image}
-                    className="card-img-top mx-auto d-block"
-                    alt="First Name"
-                  />
+                  <Spin>
+                    <img
+                      src={viewer.image}
+                      className="card-img-top mx-auto d-block"
+                      alt="First Name"
+                    />
+                  </Spin>
                   <small>{viewer.email}</small>
                   <h3>{viewer.name}</h3>
                   <p className="card-text">{viewer.title}</p>
