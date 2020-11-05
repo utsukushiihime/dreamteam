@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Layout from "../../../components/layout";
+import Todo from "../../../components/todo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Project = () => {
@@ -10,6 +11,9 @@ const Project = () => {
     <Layout>
       <div className="container mt-5">
         <div className="row">
+          <div className="col">
+            <Todo />
+          </div>
           <div className="col">
             <div className="card mb-4 text-left">
               <div className="card-body">
