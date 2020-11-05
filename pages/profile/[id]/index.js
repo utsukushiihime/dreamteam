@@ -157,7 +157,7 @@ const Profile = () => {
                     </div>
                   </div>
                   <a href="#" className="btn btn-purple btn-block">
-                    Go somewhere
+                    View All Recommendations
                   </a>
                 </div>
               </div>
@@ -174,7 +174,7 @@ const Profile = () => {
                     </p>
                   </div>
                   <a href="#" className="btn btn-purple btn-block">
-                    Go somewhere
+                    View Teams
                   </a>
                 </div>
               </div>{" "}

@@ -33,7 +33,7 @@ export default function Resources() {
               </text>
             </svg>
             <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-dark">
-              <strong className="d-block text-gray-dark">@username</strong>
+              <strong className="d-block text-gray-dark">@avataraang</strong>
               Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
               tellus ac cursus commodo, tortor mauris condimentum nibh, ut
               fermentum massa justo sit amet risus.
@@ -57,7 +57,7 @@ export default function Resources() {
               </text>
             </svg>
             <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-dark">
-              <strong className="d-block text-gray-dark">@username</strong>
+              <strong className="d-block text-gray-dark">@avatarkorra</strong>
               Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
               tellus ac cursus commodo, tortor mauris condimentum nibh, ut
               fermentum massa justo sit amet risus.
@@ -81,7 +81,7 @@ export default function Resources() {
               </text>
             </svg>
             <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-dark">
-              <strong className="d-block text-gray-dark">@username</strong>
+              <strong className="d-block text-gray-dark">@stevenmcneil</strong>
               Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
               tellus ac cursus commodo, tortor mauris condimentum nibh, ut
               fermentum massa justo sit amet risus.
@@ -113,10 +113,10 @@ export default function Resources() {
             </svg>
             <div className="media-body pb-3 mb-0 small lh-125 border-bottom border-dark">
               <div className="d-flex justify-content-between align-items-center w-100">
-                <strong className="text-gray-dark">Full Name</strong>
+                <strong className="text-gray-dark">Dream Team Admin</strong>
                 <a href="#">Follow</a>
               </div>
-              <span className="d-block">@username</span>
+              <span className="d-block">@admin</span>
             </div>
           </div>
           <div className="media text-muted pt-3">
@@ -138,10 +138,10 @@ export default function Resources() {
             </svg>
             <div className="media-body pb-3 mb-0 small lh-125 border-bottom border-dark">
               <div className="d-flex justify-content-between align-items-center w-100">
-                <strong className="text-gray-dark">Full Name</strong>
+                <strong className="text-gray-dark">Crystal McNeil</strong>
                 <a href="#">Follow</a>
               </div>
-              <span className="d-block">@username</span>
+              <span className="d-block">@crystalmcneil</span>
             </div>
           </div>
           <div className="media text-muted pt-3">
@@ -163,10 +163,10 @@ export default function Resources() {
             </svg>
             <div className="media-body pb-3 mb-0 small lh-125 border-bottom border-dark">
               <div className="d-flex justify-content-between align-items-center w-100">
-                <strong className="text-gray-dark">Full Name</strong>
+                <strong className="text-gray-dark">Korra</strong>
                 <a href="#">Follow</a>
               </div>
-              <span className="d-block">@username</span>
+              <span className="d-block">@avatarkorra</span>
             </div>
           </div>
           <small className="d-block text-right mt-3">
