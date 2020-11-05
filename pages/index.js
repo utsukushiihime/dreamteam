@@ -24,10 +24,26 @@ const Index = () => {
           <small>Welcome back, {viewer.name}</small>
           <div className="row mt-5 mr-4">
             <div className="col px-3 ">
-              <h1 className="mt-5">
-                Create your
-                <br /> Dream Team
-              </h1>
+              <h1 className="mt-5">Work Anywhere you want!</h1>
+
+              <div className="row mt-5">
+                <div className="col">
+                  <ul className="list-purple">
+                    <li>Waste less time commuting.</li>
+                    <li>Don't pay for office space.</li>
+
+                    <li>You can work in your PJ's.</li>
+                  </ul>
+                </div>
+                <div className="col">
+                  <ul className="list-purple">
+                    <li>You'll be happier.</li>
+                    <li>It's easier than ever.</li>
+                    <li>Remote teams are effective.</li>
+                  </ul>
+                </div>
+              </div>
+
               <div className="row my-4">
                 <div className="col d-flex align-content-stretch flex-wrap">
                   <button className="btn btn-purple btn-block">
@@ -45,7 +61,7 @@ const Index = () => {
             </div>
             <div className="col">
               <Tada>
-                <img className="img-fluid" src="/images/team.png" />
+                <img className="img-fluid" src="/images/work_anywhere.png" />
               </Tada>
             </div>
           </div>

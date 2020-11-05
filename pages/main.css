@@ -31,6 +31,7 @@ a.nav-link {
   transition: background-position 275ms ease;
   text-decoration: none;
 }
+
 a.nav-link:hover {
   background-position: 0 100%;
 }
@@ -45,8 +46,26 @@ h4,
 h6 {
   color: #5c31ca;
 }
+
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+ul.list-purple li::before {
+  content: "\2022";
+  color: #5c31ca;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
 .bg-dark {
   background-color: #1c242f !important;
+}
+
+.bg-md-dark {
+  background: #1c1c1d;
 }
 
 .text-success {
