@@ -13,11 +13,7 @@ class TodoExample extends React.Component {
     };
     this.state = {
       todo: "",
-      todos: [
-        "Invite User to Project",
-        "Add Project Files",
-        "Sign Contracts",
-      ].map((text, id) => ({ id, text })),
+      todos: [].map((text, id) => ({ id, text })),
     };
     this.state.id = this.state.todos.length;
     this.handleChange = this.handleChange.bind(this);
@@ -55,7 +51,7 @@ class TodoExample extends React.Component {
               // animated transitions
               <Fade key={item.id} collapse bottom>
                 <div className="card">
-                  <div className="card-body justify-content-between">
+                  <div className="card-body justify-content-between text-left">
                     {item.text}
                     <button
                       data-id={item.id}

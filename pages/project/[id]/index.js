@@ -19,7 +19,7 @@ const Project = () => {
               <div className="card-body">
                 <h5 className="card-title">React, Apollo & GraphQL App</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
-                  <i class="fab fa-edit    "></i> Edit Project{" "}
+                  <i className="fab fa-edit"></i> Edit Project{" "}
                   <span className="ml-2">
                     <Link href="/project/edit">
                       <a>
