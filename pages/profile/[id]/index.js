@@ -55,6 +55,7 @@ const Profile = () => {
                       alt="First Name"
                     />
                   </Spin>
+
                   <small>{viewer.email}</small>
                   <h3>{viewer.name}</h3>
                   <p className="card-text">{viewer.title}</p>
