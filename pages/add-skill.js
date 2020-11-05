@@ -34,7 +34,7 @@ function AddSkill() {
           name: nameElement.value.toLowerCase(),
         },
       });
-      await router.push("/profile");
+      await router.push("/assessment");
     } catch (error) {
       setErrorMsg(getErrorMessage(error));
     }
@@ -65,8 +65,8 @@ function AddSkill() {
                 Add Skill
               </button>{" "}
               or{" "}
-              <Link href="profile">
-                <button className="btn btn-purple">Go to Profile</button>
+              <Link href="/assessment">
+                <button className="btn btn-purple">Take Assessment</button>
               </Link>
             </div>
           </div>
