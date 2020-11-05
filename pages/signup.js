@@ -6,6 +6,7 @@ import { getErrorMessage } from "../lib/form";
 import Field from "../components/field";
 import TextArea from "../components/textarea";
 import ToggleContent from "../components/toggle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SignUpMutation = gql`
   mutation SignUpMutation(

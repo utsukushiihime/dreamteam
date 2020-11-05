@@ -17,6 +17,7 @@ import {
   faTimesCircle,
   faPlusCircle,
   faPaperPlane,
+  faAddressCard,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -32,7 +33,8 @@ library.add(
   faHouseUser,
   faTimesCircle,
   faPlusCircle,
-  faPaperPlane
+  faPaperPlane,
+  faAddressCard
 );
 
 export default function App({ Component, pageProps }) {
